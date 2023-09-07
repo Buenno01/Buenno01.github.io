@@ -1,0 +1,17 @@
+.container{
+    margin: 0 16.5%;
+}
+
+.content-body{
+    line-height: 150%;
+
+    margin-bottom: 6em;
+}
+
+.content-title{
+    font-family: var(--font-family-title);
+    font-weight: 600;
+    font-size: 2em;
+    
+    padding-bottom: 0.5em;
+}
