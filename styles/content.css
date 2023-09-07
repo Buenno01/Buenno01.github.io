@@ -1,11 +1,10 @@
 .container{
     margin: 0 16.5%;
+    margin-bottom: 6em;
 }
 
 .content-body{
     line-height: 150%;
-
-    margin-bottom: 6em;
 }
 
 .content-title{
@@ -14,4 +13,33 @@
     font-size: 2em;
     
     padding-bottom: 0.5em;
+}
+
+.content-tiles{
+    display: flex;
+    justify-content: center;
+
+    font-size: 0.8em;
+    font-weight: 500;
+
+    gap: 3em;
+}
+
+.content-tile{
+    display: flex;
+    flex-direction: column;
+}
+
+.badge{
+    display: flex;
+    flex-flow: column;
+    background-color: #DB44B8;
+    height: 28px;
+    padding: 0 1em;
+    color: white;
+    justify-content: center;
+}
+
+.content-skill{
+
 }
