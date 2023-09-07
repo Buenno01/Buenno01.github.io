@@ -28,6 +28,6 @@ body{
     font-family: var(--font-family-paragraph);
 }
 
-a{
+.is-link{
     color: var(--color-dark-green);
 }
