@@ -1,7 +1,16 @@
 .navbar{
     background-color: var(--color-dark-green);
     color: var(--color-white);
-    padding:1em;
+    padding: 0 5vw;
+    height: 5vh;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    position: fixed;
+}
+
+.navbar a {
+    color: var(--color-white);
 }
 
 .navbar-menu{
@@ -15,7 +24,7 @@
     font-weight: 500;
 }
 
-.menu-title{
+.menu-brand{
     font-family: var(--font-family-title);
     font-weight: 800;
     font-size: 1.5em;
