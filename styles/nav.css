@@ -23,6 +23,7 @@
 
 .menu-item:hover {
     border-bottom: 2px solid var(--color-cyan);
+    color: var(--color-cyan);
 }
 
 .navbar h1 {

@@ -1,10 +1,11 @@
 import { createElement } from "../elementBuilder.js";
 
-import { landingpageText } from "../lists/landingpageText.js";
+import { landingpageContent } from "../lists/landingpageSection.js";
 
 function landingPageImage() {
     const imageElement = createElement('img', 'landingpage-image');
-    imageElement.src = '/assets/minha-foto.jpg';
+    imageElement.src = landingpageContent.imageUrl;
+    imageElement.alt = landingpageContent.alt
 
     return imageElement;
 }
@@ -12,12 +13,12 @@ function landingPageImage() {
 function landingPageDescription() {
     const descriptionContainer = createElement('div', 'landingpage-text');
     const title = createElement('h2', 'landingpage-title');
-    title.innerText = landingpageText.title;
+    title.innerText = landingpageContent.title;
     const description = createElement('p', 'landingpage-description');
-    description.innerText = landingpageText.description;
+    description.innerText = landingpageContent.description;
     const cv = createElement('a', 'landingpage-link');
     cv.innerText = 'Baixar CV';
-    cv.href = landingpageText.link;
+    cv.href = landingpageContent.link;
     cv.target = '_blank'
     descriptionContainer.appendChild(title);
     descriptionContainer.appendChild(description);
