@@ -43,7 +43,9 @@ function menuItensBuilder() {
 
     menuItens.forEach((item) => {
         const newItem = createElement('li', 'menu-item');
-        newItem.innerText = item.name;
+        newItem.innerHTML = `
+        <a href=${item.link}>${item.name}</a>`;
+
         itensList.appendChild(newItem);
     });
 

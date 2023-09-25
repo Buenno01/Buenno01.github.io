@@ -4,7 +4,8 @@
 }
 
 #about-me .about-me-image{
-    width: 50%;
+    width: 500px;
+    height: 60%;
 }
 
 #about-me .about-me-text{
@@ -16,12 +17,12 @@
 
 .about-me-description p {
     margin-top: 1em;
-    line-height: 130%;
+    line-height: 140%;
 }
 
 .about-me-title {
     font-size: 2em;
     font-weight: 600;
-    color: var(--color-red);
+    color: var(--color-cyan);
 
 }

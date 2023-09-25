@@ -48,7 +48,7 @@
     padding: 1em;
     padding-right: 1.8em;
     top: 3.3em;
-    left: 18em;
+    left: 19em;
     border-bottom-left-radius: 1em;
     border-bottom-right-radius: 1em;
     display: flex;
@@ -69,4 +69,8 @@
 .navbar-menu {
     display: flex;
     gap: 3em;
+}
+
+.navbar-brand {
+    color: var(--color-cyan);
 }
