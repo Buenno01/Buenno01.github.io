@@ -9,8 +9,11 @@ dark-green: 10, 122, 102
 */
 
 @import url('nav.css');
+
 @import url('landingpage.css');
+
 @import url('content.css');
+
 @import url('https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@300;400;500;700;800;900&family=Roboto:ital,wght@0,400;0,500;0,700;0,800;1,400;1,700&display=swap');
 
 :root{
@@ -19,6 +22,7 @@ dark-green: 10, 122, 102
     --color-dark-green: rgb(10, 122, 102 );
     --color-saturated-dark-green: rgb(27,50,57);
     --color-darkest-green: rgb(8, 35, 41);
+    --color-comment: rgb(245, 245, 245);
 
     --font-family-title: 'Hanken Grotesk', sans-serif;
     --font-family-paragraph: 'Roboto', sans-serif;
