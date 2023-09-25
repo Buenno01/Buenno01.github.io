@@ -1,7 +1,7 @@
 .landingpage {
     display: flex;
     align-items: center;
-    background-color: var(--color-darkest-green);
+    background-color: var(--color-background-2);
     margin-bottom: 5%;
 }
 
@@ -22,10 +22,29 @@
 
 .landingpage-description {
     margin: 1.5em 0;
+    line-height: 150%;
 }
 
 .landingpage-title {
     font-family: var(--font-family-title);
     font-weight: 600;
     font-size: 2em;
+    color: var(--color-green);
+}
+
+.landingpage-link {
+    margin: 0 auto;
+    color: var(--color-green);
+    border: 2px solid var(--color-green);
+    padding: 0.8em;
+    border-radius: 1em;
+}
+
+.landingpage-link:hover {
+    color: var(--color-cyan);
+    border-color: var(--color-cyan);
+}
+
+.landingpage-link:active {
+    background-color: var(--color-background);
 }

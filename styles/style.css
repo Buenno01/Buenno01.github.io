@@ -7,7 +7,7 @@ darkest-green: 8, 35, 41
 highlight: 41, 214, 208
 dark-green: 10, 122, 102 
 */
-
+/*#282A36,#44475A,#44475A,#8BE9FD,#6272A4,#FFFFFF,#50FA7B,#FF5555*/
 @import url('nav.css');
 
 @import url('landingpage.css');
@@ -24,12 +24,21 @@ dark-green: 10, 122, 102
     --color-darkest-green: rgb(8, 35, 41);
     --color-comment: rgb(245, 245, 245);
 
+    --color-foreground: #FFFFFF;
+    --color-background: #282A36;
+    --color-background-2: #44475A;
+    --color-comment: #6272A4;
+    --color-green: #50FA7B;
+    --color-red: #FF5555;
+    --color-cyan: #8BE9FD;
+
     --font-family-title: 'Hanken Grotesk', sans-serif;
     --font-family-paragraph: 'Roboto', sans-serif;
 }
 
 body{
     font-family: var(--font-family-paragraph);
+    background-color: var(--color-background);
 }
 
 a {

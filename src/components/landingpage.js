@@ -15,8 +15,13 @@ function landingPageDescription() {
     title.innerText = landingpageText.title;
     const description = createElement('p', 'landingpage-description');
     description.innerText = landingpageText.description;
+    const cv = createElement('a', 'landingpage-link');
+    cv.innerText = 'Baixar CV';
+    cv.href = landingpageText.link;
+    cv.target = '_blank'
     descriptionContainer.appendChild(title);
     descriptionContainer.appendChild(description);
+    descriptionContainer.appendChild(cv);
 
     return descriptionContainer
 }
