@@ -1,33 +1,42 @@
-/* 
-Paleta de cores
-
-saturated-dark-green: 27, 50, 57 
-white: 255, 255, 255
-darkest-green: 8, 35, 41
-highlight: 41, 214, 208
-dark-green: 10, 122, 102 
-*/
-
+/*#282A36,#44475A,#44475A,#8BE9FD,#6272A4,#FFFFFF,#50FA7B,#FF5555*/
 @import url('nav.css');
+
 @import url('landingpage.css');
-@import url('content.css');
+
+@import url('aboutme.css');
+
+@import url('container.css');
+
+@import url('skills.css');
+
+@import url('projects.css');
+
 @import url('https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@300;400;500;700;800;900&family=Roboto:ital,wght@0,400;0,500;0,700;0,800;1,400;1,700&display=swap');
 
 :root{
-    --color-white: rgb(255, 255, 255);
-    --color-highlight: rgb(41, 214, 208);
-    --color-dark-green: rgb(10, 122, 102 );
-    --color-saturated-dark-green: rgb(27,50,57);
-    --color-darkest-green: rgb(8, 35, 41);
+
+    --color-foreground: #FFFFFF;
+
+    --color-background: #282A36;
+
+    --color-background-2: #44475A;
+
+    --color-comment: #6272A4;
+
+    --color-green: #50FA7B;
+
+    --color-red: #FF5555;
+
+    --color-cyan: #8BE9FD;
 
     --font-family-title: 'Hanken Grotesk', sans-serif;
+
     --font-family-paragraph: 'Roboto', sans-serif;
+
 }
 
 body{
     font-family: var(--font-family-paragraph);
-}
-
-a {
-    color: var(--color-dark-green);
+    background-color: var(--color-background);
+    color: var(--color-foreground);
 }

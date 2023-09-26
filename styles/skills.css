@@ -1,0 +1,18 @@
+#skills {
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+}
+
+.skills-title {
+    color: var(--color-cyan);
+    font-size: 2em;
+    font-weight: 600;
+    margin: 0 auto;
+}
+
+.skills-list {
+    margin-top: 1em;
+    display: flex;
+    justify-content: space-between;
+}

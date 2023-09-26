@@ -1,31 +1,75 @@
-.navbar{
-    background-color: var(--color-dark-green);
+.navbar {
+    background-color: var(--color-background);
     color: var(--color-white);
     padding: 0 5vw;
-    height: 5vh;
-    width: 100vw;
+    height: 53px;
     display: flex;
     align-items: center;
-    position: fixed;
+    gap: 2em;
+    font-size: 1em;
+    font-weight: 500;
+    border-bottom: 2px solid var(--color-foreground);
+}
+
+.menu-item {
+    display: flex;
+    height: 53px;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    border-bottom: 2px solid rgba(1, 1, 1, 0);
+}
+
+.menu-item:hover {
+    border-bottom: 2px solid var(--color-cyan);
+    color: var(--color-cyan);
+}
+
+.navbar h1 {
+    font-size: 1.3em;
+    font-weight: 600;
 }
 
 .navbar a {
     color: var(--color-white);
 }
 
-.navbar-menu{
+.navbar li {
+    list-style: none;
+}
+
+#find-me ul {
+    display: none;
+}
+
+#find-me.hovering ul {
+    position: absolute;
+    padding: 1em;
+    padding-right: 1.8em;
+    top: 3.3em;
+    left: 19em;
+    border-bottom-left-radius: 1em;
+    border-bottom-right-radius: 1em;
     display: flex;
-    align-items: baseline;
-    gap: 2em;
-
+    flex-flow: column;
+    gap: 0.8em;
+    font-weight: 400;
+    background-color: var(--color-background-2);
 }
 
-.menu-item{
-    font-weight: 500;
+#find-me.hovering a {
+    color: var(--color-foreground);
 }
 
-.menu-brand{
-    font-family: var(--font-family-title);
-    font-weight: 800;
-    font-size: 1.5em;
+#find-me.hovering a:hover {
+    color: var(--color-cyan);
+}
+
+.navbar-menu {
+    display: flex;
+    gap: 3em;
+}
+
+.navbar-brand {
+    color: var(--color-cyan);
 }

@@ -1,0 +1,28 @@
+#about-me {
+    display: flex;
+    justify-content: space-between;
+}
+
+#about-me .about-me-image{
+    width: 500px;
+    height: 60%;
+}
+
+#about-me .about-me-text{
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    margin-right: 2em;
+}
+
+.about-me-description p {
+    margin-top: 1em;
+    line-height: 140%;
+}
+
+.about-me-title {
+    font-size: 2em;
+    font-weight: 600;
+    color: var(--color-cyan);
+
+}
