@@ -50,3 +50,37 @@
 .card-text-container::-webkit-scrollbar {
     width: 0px;
 }
+
+.hidden-info {
+    position: absolute;
+    display: none;
+    flex-flow: column-reverse;
+    justify-content: space-between;
+    height: 155px;
+}
+
+.hover .hidden-info {
+    display: flex;
+}
+
+.card-techs {
+    display: flex;
+    gap: 10px;
+    max-width: 200px;
+    flex-wrap: wrap;
+}
+
+.card-links {
+    display: flex;
+    gap: 10px;
+}
+
+.tech-item, .card-links a {
+    color: var(--color-cyan);
+    font-size: 1.2em;
+    font-weight: 500;
+    border: 2px solid var(--color-cyan);
+    padding: 0.2em;
+    border-radius: 0.3em;
+    background-color: var(--color-background);
+}

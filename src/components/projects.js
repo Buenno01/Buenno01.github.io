@@ -19,12 +19,34 @@ function cardDescription(item) {
 }
 
 function cardimage(item) {
-    const imgContainer = createElement('div', 'img-')
+    const imgContainer = createElement('div', 'info-container');
+    const techs = createElement('ul', 'card-techs');
+    item.techs.forEach((tech) => {
+        const tool = createElement('li', 'tech-item');
+        tool.innerText = tech;
+        techs.appendChild(tool);
+    });
+    const links = createElement('ul', 'card-links');
+    links.innerHTML = `
+    <li><a href=${item.urlGitHub} target="_blank">GitHub</a></li>
+    <li><a href=${item.urlDeploy} target="_blank">Site</a></li>
+    `;
+    const div = createElement('div', 'hidden-info');
+    div.appendChild(links);
+    div.appendChild(techs);
 
     const cardImg = createElement('img', 'card-img');
     cardImg.src = item.img;
 
-    return cardImg;
+    [div, cardImg].forEach((e) => {
+        imgContainer.appendChild(e);
+    });
+
+    return imgContainer;
+}
+
+function toggleHover(e) {
+    e.target.classList.toggle('hover');
 }
 
 function loadProjects() {
@@ -34,6 +56,8 @@ function loadProjects() {
         const card = createElement('li', 'project-card');
         card.appendChild(cardimage(project));
         card.appendChild(cardDescription(project));
+        card.addEventListener('mouseenter', toggleHover);
+        card.addEventListener('mouseleave', toggleHover);
 
         projectList.appendChild(card);
     });
