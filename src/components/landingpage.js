@@ -12,7 +12,7 @@ function landingPageImage() {
 
 function landingPageDescription() {
     const descriptionContainer = createElement('div', 'landingpage-text');
-    const title = createElement('h2', 'landingpage-title');
+    const title = createElement('h2', 'content-title');
     title.innerText = landingpageContent.title;
     const description = createElement('p', 'landingpage-description');
     description.innerText = landingpageContent.description;

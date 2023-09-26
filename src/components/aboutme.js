@@ -3,7 +3,7 @@ import { aboutMeContent } from "../lists/aboutmeSection.js";
 
 function aboutMeText() {
     const textContainer = createElement('div', 'about-me-text');
-    const title = createElement('h2', 'about-me-title');
+    const title = createElement('h2', 'content-title');
     title.innerText = aboutMeContent.title;
 
     const description = createElement('div', 'about-me-description');

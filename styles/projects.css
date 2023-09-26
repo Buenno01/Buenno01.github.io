@@ -1,0 +1,52 @@
+.project-card {
+    width: 300px;
+    align-items: center;
+    padding: 1em;
+    border: 1px solid var(--color-foreground);
+    border-radius: 2em;
+    height: 250px;
+}
+
+.project-card:hover {
+    border-color: var(--color-cyan);
+}
+
+.project-card:hover .card-title {
+    color: var(--color-cyan);
+}
+
+.project-card:hover .card-img {
+    border-color: var(--color-cyan);
+}
+
+.project-card img {
+    width: 100%;
+    border-radius: 0.6em;
+}
+
+.card-title {
+    margin-top: 0.5em;
+    font-size: 1.3em;
+    font-weight: 600;
+}
+
+.card-description {
+    line-height: 120%;
+    margin-top: 0.5em;
+} 
+
+.project-list {
+    margin-top: 1em;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 9px;
+}
+
+.card-text-container {
+    overflow-y: scroll;
+    height: 90px;
+}
+
+.card-text-container::-webkit-scrollbar {
+    width: 0px;
+}
