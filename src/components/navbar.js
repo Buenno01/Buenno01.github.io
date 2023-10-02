@@ -80,7 +80,7 @@ function createHover(itemHover) {
 }
 
 function menuItensBuilder() {
-    const menuClasses = ['flex', 'flex-col', 'text-center', 'absolute', 'top-10', 'bg-background', 'w-full', 'm-0', 'border-b', 'border-foreground', 'md:flex', 'md:static', 'py-3', 'bg-opacity-95'];
+    const menuClasses = ['flex', 'flex-col', 'text-center', 'absolute', 'top-10', 'bg-background', 'w-full', 'm-0', 'border-b', 'border-foreground', 'md:flex', 'md:static', 'py-3', 'bg-opacity-95', 'hidden'];
     const itensList = createElement('nav', menuClasses);
 
 
