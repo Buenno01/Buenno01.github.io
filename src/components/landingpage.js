@@ -3,7 +3,7 @@ import { createElement } from "../elementBuilder.js";
 import { landingpageContent } from "../lists/landingpageSection.js";
 
 function landingPageImage() {
-    const imageElement = createElement('img', 'landingpage-image');
+    const imageElement = createElement('img', ['landingpage-image']);
     imageElement.src = landingpageContent.imageUrl;
     imageElement.alt = landingpageContent.alt
 
@@ -11,12 +11,12 @@ function landingPageImage() {
 }
 
 function landingPageDescription() {
-    const descriptionContainer = createElement('div', 'landingpage-text');
-    const title = createElement('h2', 'content-title');
+    const descriptionContainer = createElement('div', ['landingpage-text']);
+    const title = createElement('h2', ['content-title']);
     title.innerText = landingpageContent.title;
-    const description = createElement('p', 'landingpage-description');
+    const description = createElement('p', ['landingpage-description']);
     description.innerText = landingpageContent.description;
-    const cv = createElement('a', 'landingpage-link');
+    const cv = createElement('a', ['landingpage-link']);
     cv.innerText = 'Baixar CV';
     cv.href = landingpageContent.link;
     cv.target = '_blank'
@@ -28,7 +28,7 @@ function landingPageDescription() {
 }
 
 export const landingPageBuilder = () => {
-    const  landingPageSection = createElement('section', 'landingpage');
+    const  landingPageSection = createElement('section', ['landingpage']);
     landingPageSection.appendChild(landingPageImage());
     landingPageSection.appendChild(landingPageDescription());
 

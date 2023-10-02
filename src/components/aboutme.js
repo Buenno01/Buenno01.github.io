@@ -2,13 +2,13 @@ import { createElement } from "../elementBuilder.js";
 import { aboutMeContent } from "../lists/aboutmeSection.js";
 
 function aboutMeText() {
-    const textContainer = createElement('div', 'about-me-text');
-    const title = createElement('h2', 'content-title');
+    const textContainer = createElement('div', ['about-me-text']);
+    const title = createElement('h2', ['content-title']);
     title.innerText = aboutMeContent.title;
 
-    const description = createElement('div', 'about-me-description');
+    const description = createElement('div', ['about-me-description']);
     aboutMeContent.description.forEach((paragraph) => {
-        const p = createElement ('p', '');
+        const p = createElement ('p', []);
         p.innerHTML = paragraph;
         description.appendChild(p);
     })
@@ -20,14 +20,14 @@ function aboutMeText() {
 }
 
 function aboutMeImage() {
-    const image = createElement('img', 'about-me-image');
+    const image = createElement('img', ['about-me-image']);
     image.src = aboutMeContent.imageUrl;
     image.alt = aboutMeContent.alt;
     return image;
 }
 
 export const aboutmeBuilder = () => {
-    const aboutmeSection = createElement('section', 'container');
+    const aboutmeSection = createElement('section', ['container']);
     aboutmeSection.id = 'about-me';
 
     aboutmeSection.appendChild(aboutMeText());

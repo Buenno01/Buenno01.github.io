@@ -1,6 +1,7 @@
-export const createElement = (tagName, className) => {
+export const createElement = (tagName, classArr) => {
     const newElement = document.createElement(tagName);
-    newElement.className = className;
-
+    classArr.forEach((cl) => {
+        newElement.classList.add(cl);
+    });
     return newElement;
 }
