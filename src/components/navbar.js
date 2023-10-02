@@ -5,16 +5,25 @@ import { menuItens } from "../lists/menuItens.js";
 import { createElement } from "../elementBuilder.js";
 
 function toggleHover(event) {
-    event.target.classList.toggle('hovering');
+    console.log(event.target)
+    if (event.target.tagName === 'LI'){
+        event.target.children[1].classList.toggle('hidden');
+        event.target.classList.toggle('text-cyan')
+    } else {
+        event.target.nextSibling.classList.toggle('hidden');
+        event.target.parentNode.classList.toggle('text-cyan')
+    }
 }
 
 function showMenu(event) {
     event.target.classList.toggle('selected');
+    const menu = document.querySelector('header nav');
+    menu.classList.toggle('hidden');
 }
 
 function hamburguerMenu() {
     const hamburguerClass = ['flex', 'flex-col', 'justify-items-center', 'gap-2', 'p-0', 'mr-auto', 'md:hidden', 'cursor-pointer'];
-    const stickClass = ['bg-cyan-300', 'rounded'];
+    const stickClass = ['bg-cyan', 'rounded'];
     const hamburguer = createElement('div', hamburguerClass);
 
     for (let i = 0; i < 3; i += 1) {
@@ -29,12 +38,12 @@ function hamburguerMenu() {
 }
 
 function navbrand() {
-    const containerClasses = ['flex', 'content-center', 'w-full'];
+    const containerClasses = ['flex', 'content-center', 'w-full', 'md:w-auto', 'px-3'];
     const container = createElement('div', containerClasses);
     const hamburguer = hamburguerMenu();
     container.appendChild(hamburguer);
 
-    const brandClasses = ['text-cyan-300', 'text-2xl', 'font-bold'];
+    const brandClasses = ['text-cyan', 'text-2xl', 'font-bold'];
     const brand = createElement('h1', brandClasses);
     brand.innerText = 'Vbc.';
     container.appendChild(brand)
@@ -42,7 +51,7 @@ function navbrand() {
 }
 
 function leftMenu() {
-    const containerClasses = ['flex', 'flex-row', 'w-full'];
+    const containerClasses = ['flex', 'flex-row', 'w-full', 'relative'];
     const container = createElement('div', containerClasses);
     container.appendChild(navbrand());
     container.appendChild(menuItensBuilder());
@@ -50,37 +59,45 @@ function leftMenu() {
     return container;
 }
 
-function findMeMenu() {
-    const menuItem = createElement('div', ['menu-item']);
-    menuItem.innerText = 'Find me';
-    menuItem.id = 'find-me';
-    menuItem.addEventListener('mouseenter', toggleHover);
-    menuItem.addEventListener('mouseleave', toggleHover);
+function createHover(itemHover) {
+    const hoverClasses = ['hidden']
+    const hoverList = createElement('ul', hoverClasses);
 
-    const hoverList = createElement('ul', []);
+    const hoverItemsClasses = ['text-foreground', 'hover:text-cyan'];
 
-    socialMedias.forEach((socialMedia) => {
-        const newSocialLink = createElement('li', ['menu-item-hover']);
+    itemHover.forEach((link) => {
+        const newSocialLink = createElement('li', hoverItemsClasses);
         newSocialLink.innerHTML = `
-        <a href="${socialMedia.link}" target="_blank">
-        ${socialMedia.name}
+        <a href="${link.link}" target="_blank">
+        ${link.name}
         </a>
         `;
         hoverList.appendChild(newSocialLink);
     });
-
-    menuItem.appendChild(hoverList);
-    return menuItem;
+    return hoverList;
 }
 
 function menuItensBuilder() {
-    const itensList = createElement('nav', ['hidden', 'md:flex']);
-    itensList.appendChild(findMeMenu());
+    const menuClasses = ['flex', 'flex-col', 'text-center', 'absolute', 'top-10', 'bg-background', 'w-full', 'm-0', 'border-b', 'border-foreground', 'md:flex', 'md:static', 'py-3', 'bg-opacity-95'];
+    const itensList = createElement('nav', menuClasses);
 
+
+    const itemsClasses = ['flex', 'flex-col', 'content-center', 'align-center', 'cursor-pointer', 'border-b-0', 'hover:text-cyan'];
     menuItens.forEach((item) => {
-        const newItem = createElement('li', ['menu-item']);
-        newItem.innerHTML = `
+        const newItem = createElement('li', itemsClasses);
+        if (item.link) {
+            newItem.innerHTML = `
         <a href=${item.link}>${item.name}</a>`;
+        } else {
+            newItem.innerHTML = `<p>${item.name}</p>`
+        }
+        if (item.hover) {
+            const hoverMenu = createHover(item.hover);
+            newItem.appendChild(hoverMenu);
+            ['click'].forEach((event) => {
+                newItem.addEventListener(event, toggleHover);
+            })
+        }
 
         itensList.appendChild(newItem);
     });
@@ -89,7 +106,7 @@ function menuItensBuilder() {
 }
 
 export const navbarBuilder = () => {
-    const navbarElement = createElement('header', ['flex', 'flex-row', 'content-between', 'flex-nowrap', 'p-3']);
+    const navbarElement = createElement('header', ['flex', 'flex-row', 'content-between', 'flex-nowrap', 'py-2']);
 
     navbarElement.appendChild(leftMenu());
 
