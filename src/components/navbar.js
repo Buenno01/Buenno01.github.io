@@ -19,6 +19,8 @@ function showMenu(event) {
     event.target.classList.toggle('selected');
     const menu = document.querySelector('header nav');
     menu.classList.toggle('hidden');
+    
+    document.querySelector('header p').nextElementSibling.classList.add('hidden');
 }
 
 function hamburguerMenu() {
