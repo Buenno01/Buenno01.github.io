@@ -3,6 +3,7 @@ module.exports = {
   content: [
     './index.html', 
     './src/components/*.js', 
+    './src/lists/*.js', 
     './app.js', 
     './src/elementBuilder.js'],
   theme:{

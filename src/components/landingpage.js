@@ -3,32 +3,34 @@ import { createElement } from "../elementBuilder.js";
 import { landingpageContent } from "../lists/landingpageSection.js";
 
 function landingPageImage() {
-    const imageElement = createElement('img', ['landingpage-image']);
-    imageElement.src = landingpageContent.imageUrl;
-    imageElement.alt = landingpageContent.alt
+    const imageInfo = landingpageContent.image;
+    const imgEl = createElement(imageInfo.tag, imageInfo.classes);
+    imgEl.src = imageInfo.url;
+    imgEl.alt = imageInfo.alt;
 
-    return imageElement;
+    return imgEl;
 }
 
 function landingPageDescription() {
-    const descriptionContainer = createElement('div', ['landingpage-text']);
-    const title = createElement('h2', ['content-title']);
-    title.innerText = landingpageContent.title;
-    const description = createElement('p', ['landingpage-description']);
-    description.innerText = landingpageContent.description;
-    const cv = createElement('a', ['landingpage-link']);
-    cv.innerText = 'Baixar CV';
-    cv.href = landingpageContent.link;
-    cv.target = '_blank'
-    descriptionContainer.appendChild(title);
-    descriptionContainer.appendChild(description);
-    descriptionContainer.appendChild(cv);
+    const textContainerClasses = ['py-5', 'text-foreground', 'px-3', 'max-w-xl', 'flex', 'flex-col', 'gap-2', 'mx-auto'];
+    const textContainer = createElement('div', textContainerClasses);
 
-    return descriptionContainer
+    landingpageContent.text.forEach((element) => {
+        const newEl = createElement(element.tag, element.classes);
+        newEl.innerText = element.content;
+        textContainer.appendChild(newEl);
+        if (element.link) {
+            newEl.target = '_blank'
+            newEl.href = element.link;
+        }
+    });
+
+    return textContainer
 }
 
 export const landingPageBuilder = () => {
-    const  landingPageSection = createElement('section', ['landingpage']);
+    const sectionClass = ['container', 'relative', 'overflow-hidden', 'bg-background', 'flex', 'flex-col', 'justify-center', 'min-h-screen', 'align-center', 'content-center'];
+    const  landingPageSection = createElement('section', sectionClass);
     landingPageSection.appendChild(landingPageImage());
     landingPageSection.appendChild(landingPageDescription());
 

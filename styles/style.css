@@ -1,13 +1,4 @@
 /*#282A36,#44475A,#44475A,#8BE9FD,#6272A4,#FFFFFF,#50FA7B,#FF5555*/
-@import url('landingpage.css');
-
-@import url('aboutme.css');
-
-@import url('container.css');
-
-@import url('skills.css');
-
-@import url('projects.css');
 
 @tailwind base;
 

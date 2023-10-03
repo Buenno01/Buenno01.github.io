@@ -65,7 +65,7 @@ function createHover(itemHover) {
     const hoverClasses = ['md:flex-col', 'md:absolute', 'md:left-0', 'md:right-0', 'md:top-12', 'md:content-start', 'md:px-5', 'md:bg-background2', 'md:rounded-b', 'md:py-2', 'hidden'];
     const hoverList = createElement('ul', hoverClasses);
 
-    const hoverItemsClasses = ['text-foreground', 'hover:text-cyan', 'md:text-start'];
+    const hoverItemsClasses = ['text-foreground', 'mt-1', 'hover:text-cyan', 'md:text-start'];
 
     itemHover.forEach((link) => {
         const newSocialLink = createElement('li', hoverItemsClasses);
@@ -80,11 +80,11 @@ function createHover(itemHover) {
 }
 
 function menuItensBuilder() {
-    const menuClasses = ['flex', 'flex-col', 'text-center', 'absolute', 'top-10', 'bg-background', 'w-full', 'm-0','py-3', 'bg-opacity-95', 'hidden', 'md:flex', 'md:flex-row', 'md:static', 'md:bg-opacity-100', 'md:content-baseline', 'md:justify-between', 'md:mr-20', 'md:p-0', 'max-w-xl'];
+    const menuClasses = ['flex', 'flex-col', 'text-center', 'absolute', 'left-0', 'right-0','top-10', 'bg-background', 'w-full', 'm-0','py-3', 'bg-opacity-95', 'hidden', 'md:flex', 'md:flex-row', 'md:static', 'md:bg-opacity-100', 'md:content-baseline', 'md:justify-between', 'md:mr-20', 'md:p-0', 'max-w-xl'];
     const itensList = createElement('nav', menuClasses);
 
 
-    const itemsClasses = ['flex', 'flex-col', 'content-center', 'align-center', 'cursor-pointer', 'hover:text-cyan', 'md:align-baseline', 'md:justify-center', 'md:flex-grow', 'md:relative', 'py-3'];
+    const itemsClasses = ['flex', 'flex-col', 'content-center', 'align-center', 'cursor-pointer', 'mt-1', 'py-3', 'hover:text-cyan', 'md:align-baseline', 'md:justify-center', 'md:flex-grow', 'md:relative', 'md:mt-0'];
     menuItens.forEach((item) => {
         const newItem = createElement('li', itemsClasses);
         if (item.link) {
@@ -108,7 +108,7 @@ function menuItensBuilder() {
 }
 
 export const navbarBuilder = () => {
-    const navbarClasses = ['flex', 'flex-row', 'content-between', 'flex-nowrap', 'bg-background', 'text-foreground',  'border-0', 'md:px-3', 'shadow-md'];
+    const navbarClasses = ['flex', 'flex-row', 'content-between', 'flex-nowrap', 'bg-background', 'shadow-md', 'text-foreground',  'border-0', 'py-2', 'md:px-3', 'md:py-0'];
     const navbarElement = createElement('header', navbarClasses);
 
     navbarElement.appendChild(leftMenu());
