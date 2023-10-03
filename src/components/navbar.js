@@ -1,5 +1,3 @@
-import { socialMedias } from "../lists/socialMedias.js";
-
 import { menuItens } from "../lists/menuItens.js";
 
 import { createElement } from "../elementBuilder.js";
@@ -8,9 +6,11 @@ function toggleHover(event) {
     console.log(event.target)
     if (event.target.tagName === 'LI'){
         event.target.children[1].classList.toggle('hidden');
+        event.target.children[1].classList.toggle('md:flex');
         event.target.classList.toggle('text-cyan')
     } else {
         event.target.nextSibling.classList.toggle('hidden');
+        event.target.nextSibling.classList.toggle('md:flex');
         event.target.parentNode.classList.toggle('text-cyan')
     }
 }
@@ -40,7 +40,7 @@ function hamburguerMenu() {
 }
 
 function navbrand() {
-    const containerClasses = ['flex', 'content-center', 'w-full', 'md:w-auto', 'px-3'];
+    const containerClasses = ['flex', 'content-center', 'w-full', 'px-3', 'md:flex-col', 'md:w-auto', 'md:align-center', 'md:justify-center', 'md:pb-1'];
     const container = createElement('div', containerClasses);
     const hamburguer = hamburguerMenu();
     container.appendChild(hamburguer);
@@ -62,10 +62,10 @@ function leftMenu() {
 }
 
 function createHover(itemHover) {
-    const hoverClasses = ['hidden']
+    const hoverClasses = ['md:flex-col', 'md:absolute', 'md:left-0', 'md:right-0', 'md:top-12', 'md:content-start', 'md:px-5', 'md:bg-background2', 'md:rounded-b', 'md:py-2', 'hidden'];
     const hoverList = createElement('ul', hoverClasses);
 
-    const hoverItemsClasses = ['text-foreground', 'hover:text-cyan'];
+    const hoverItemsClasses = ['text-foreground', 'hover:text-cyan', 'md:text-start'];
 
     itemHover.forEach((link) => {
         const newSocialLink = createElement('li', hoverItemsClasses);
@@ -80,11 +80,11 @@ function createHover(itemHover) {
 }
 
 function menuItensBuilder() {
-    const menuClasses = ['flex', 'flex-col', 'text-center', 'absolute', 'top-10', 'bg-background', 'w-full', 'm-0', 'border-b', 'border-foreground', 'md:flex', 'md:static', 'py-3', 'bg-opacity-95', 'hidden'];
+    const menuClasses = ['flex', 'flex-col', 'text-center', 'absolute', 'top-10', 'bg-background', 'w-full', 'm-0','py-3', 'bg-opacity-95', 'hidden', 'md:flex', 'md:flex-row', 'md:static', 'md:bg-opacity-100', 'md:content-baseline', 'md:justify-between', 'md:mr-20', 'md:p-0', 'max-w-xl'];
     const itensList = createElement('nav', menuClasses);
 
 
-    const itemsClasses = ['flex', 'flex-col', 'content-center', 'align-center', 'cursor-pointer', 'border-b-0', 'hover:text-cyan'];
+    const itemsClasses = ['flex', 'flex-col', 'content-center', 'align-center', 'cursor-pointer', 'hover:text-cyan', 'md:align-baseline', 'md:justify-center', 'md:flex-grow', 'md:relative', 'py-3'];
     menuItens.forEach((item) => {
         const newItem = createElement('li', itemsClasses);
         if (item.link) {
@@ -108,7 +108,8 @@ function menuItensBuilder() {
 }
 
 export const navbarBuilder = () => {
-    const navbarElement = createElement('header', ['flex', 'flex-row', 'content-between', 'flex-nowrap', 'py-2']);
+    const navbarClasses = ['flex', 'flex-row', 'content-between', 'flex-nowrap', 'bg-background', 'text-foreground',  'border-0', 'md:px-3', 'shadow-md'];
+    const navbarElement = createElement('header', navbarClasses);
 
     navbarElement.appendChild(leftMenu());
 

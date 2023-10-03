@@ -20,20 +20,6 @@
 
 :root{
 
-    --color-foreground: #FFFFFF;
-
-    --color-background: #282A36;
-
-    --color-background-2: #44475A;
-
-    --color-comment: #6272A4;
-
-    --color-green: #50FA7B;
-
-    --color-red: #FF5555;
-
-    --color-cyan: #8BE9FD;
-
     --font-family-title: 'Hanken Grotesk', sans-serif;
 
     --font-family-paragraph: 'Roboto', sans-serif;
