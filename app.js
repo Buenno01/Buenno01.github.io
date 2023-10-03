@@ -11,6 +11,10 @@ import { projectsElement } from "./src/components/projects.js";
 const bodyBuilder = () => {
     const body = document.querySelector('body');
     body.innerHTML = '';
+    const bodyClasses = ['bg-background2', 'text-foreground', 'flex', 'flex-col'];
+    bodyClasses.forEach((cls) => {
+        body.classList.add(cls);
+    })
 
     body.appendChild(navbarBuilder());
     body.appendChild(landingPageBuilder());
