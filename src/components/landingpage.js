@@ -29,7 +29,7 @@ function landingPageDescription() {
 }
 
 export const landingPageBuilder = () => {
-    const sectionClass = ['container', 'relative', 'overflow-hidden', 'bg-background', 'flex', 'flex-col', 'justify-center', 'min-h-screen', 'align-center', 'content-center'];
+    const sectionClass = ['container', 'relative', 'overflow-hidden', 'bg-background', 'flex', 'flex-col', 'justify-center', 'min-h-screen', 'align-center', 'content-center', 'z-10'];
     const  landingPageSection = createElement('section', sectionClass);
     landingPageSection.appendChild(landingPageImage());
     landingPageSection.appendChild(landingPageDescription());

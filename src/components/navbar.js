@@ -18,6 +18,7 @@ function toggleHover(event) {
 function showMenu(event) {
     event.target.classList.toggle('selected');
     const menu = document.querySelector('header nav');
+    menu.classList.toggle('flex');
     menu.classList.toggle('hidden');
     
     document.querySelector('header p').nextElementSibling.classList.add('hidden');
@@ -62,7 +63,7 @@ function leftMenu() {
 }
 
 function createHover(itemHover) {
-    const hoverClasses = ['md:flex-col', 'md:absolute', 'md:left-0', 'md:right-0', 'md:top-12', 'md:content-start', 'md:px-5', 'md:bg-background2', 'md:rounded-b', 'md:py-2', 'hidden'];
+    const hoverClasses = ['md:flex-col', 'md:absolute', 'md:left-0', 'md:right-0', 'md:top-12', 'md:content-start', 'md:px-5', 'md:bg-background2', 'md:rounded-b', 'md:py-2', 'md:border-t', 'hidden'];
     const hoverList = createElement('ul', hoverClasses);
 
     const hoverItemsClasses = ['text-foreground', 'mt-1', 'hover:text-cyan', 'md:text-start'];
@@ -80,11 +81,11 @@ function createHover(itemHover) {
 }
 
 function menuItensBuilder() {
-    const menuClasses = ['flex', 'flex-col', 'text-center', 'absolute', 'left-0', 'right-0','top-10', 'bg-background', 'w-full', 'm-0','py-3', 'bg-opacity-95', 'hidden', 'md:flex', 'md:flex-row', 'md:static', 'md:bg-opacity-100', 'md:content-baseline', 'md:justify-between', 'md:mr-20', 'md:p-0', 'max-w-xl'];
+    const menuClasses = ['flex-col', 'text-center', 'absolute', 'left-0', 'right-0','top-10', 'bg-background', 'w-full', 'm-0','py-3', 'bg-opacity-95', 'hidden', 'max-w-xl', 'z-20', 'border-b-2', 'border-cyan', 'md:border-0', 'md:flex', 'md:flex-row', 'md:static', 'md:bg-opacity-100', 'md:content-baseline', 'md:justify-between', 'md:mr-20', 'md:p-0'];
     const itensList = createElement('nav', menuClasses);
 
 
-    const itemsClasses = ['flex', 'flex-col', 'content-center', 'align-center', 'cursor-pointer', 'mt-1', 'py-3', 'hover:text-cyan', 'md:align-baseline', 'md:justify-center', 'md:flex-grow', 'md:relative', 'md:mt-0'];
+    const itemsClasses = ['flex', 'flex-col', 'content-center', 'align-center', 'cursor-pointer', 'mt-1', 'py-3', 'hover:text-cyan', 'md:align-baseline', 'md:justify-center', 'md:flex-grow', 'md:relative', 'md:mt-0', 'md:border-b', 'md:border-background', 'md:hover:border-cyan'];
     menuItens.forEach((item) => {
         const newItem = createElement('li', itemsClasses);
         if (item.link) {

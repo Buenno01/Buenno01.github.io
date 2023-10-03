@@ -30,7 +30,7 @@ export const landingpageContent = {
             tag: 'a',
             content: 'Baixar CV',
             link: 'https://drive.google.com/file/d/19VtnwP8oPO3KlvONnYuUrJT6Xwv6XsRN/view?usp=sharing',
-            classes: ['relative', 'text-center', 'mt-1', 'py-2', 'px-4', 'max-w-xs', 'align-center', 'mx-auto', 'border-cyan', 'border', 'rounded'],
+            classes: ['relative', 'text-center', 'mt-1', 'py-2', 'px-4', 'max-w-xs', 'align-center', 'mx-auto', 'border-cyan', 'border', 'rounded', 'text-cyan', 'hover:bg-background2', 'hover:bg-opacity-25', 'active:bg-opacity-75'],
         },
     ],
 }
