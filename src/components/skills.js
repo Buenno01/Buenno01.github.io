@@ -2,23 +2,33 @@ import { createElement } from "../elementBuilder.js";
 
 import { skillsContent } from "../lists/skillsSection.js";
 
-export const skillsSectionBuilder = () => {
-    const skillsSection = createElement('section', ['container']);
-    skillsSection.id = 'skills';
-
-    const title = createElement('h2', ['content-title']);
-    title.innerText = 'Habilidades.';
-
-    const skillList = createElement('ul', ['skills-list']);
+function generateSkillList() {
+    const skillListClasses = ['flex', 'gap-2', 'md:gap-5'];
+    const skillList = createElement('ul', skillListClasses);
     
-    skillsContent.forEach((skill) => {
-        const skillElement = createElement('li', ['skills-item']);
-        skillElement.innerHTML = `<img src=${skill.imgUrl} alt=${skill.alt}>`;
+    skillsContent.imgs.forEach((skill) => {
+        const skillElement = createElement('li', []);
+        const logo = createElement('img', skillsContent.imgClasses);
+        logo.src = skill.imgUrl;
+        logo.alt = skill.alt;
+        skillElement.appendChild(logo);
         skillList.appendChild(skillElement);
     });
 
+    return skillList;
+}
+
+export const skillsSectionBuilder = () => {
+    const sectionClasses = ['container', 'self-center', 'pt-10'];
+    const skillsSection = createElement('section', sectionClasses);
+    skillsSection.id = 'skills';
+
+    const titleClasses = ['text-2xl', 'font-bold', 'text-cyan'];
+    const title = createElement('h3', titleClasses);
+    title.innerText = 'Habilidades.';
+
     skillsSection.appendChild(title);
-    skillsSection.appendChild(skillList);
+    skillsSection.appendChild(generateSkillList());
 
     return skillsSection;
 }

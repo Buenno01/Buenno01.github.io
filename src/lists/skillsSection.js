@@ -1,26 +1,37 @@
-export const skillsContent = [
-    {
-        alt: 'CSS3',
-        imgUrl: 'https://img.shields.io/badge/CSS3-1572B6.svg?style=for-the-badge&logo=CSS3&logoColor=white',
-    },
-    {
-        alt: 'HTML5',
-        imgUrl: 'https://img.shields.io/badge/HTML5-E34F26.svg?style=for-the-badge&logo=HTML5&logoColor=white',
-    },
-    {
-        alt: 'JavaScript',
-        imgUrl: 'https://img.shields.io/badge/JavaScript-F7DF1E.svg?style=for-the-badge&logo=JavaScript&logoColor=black',
-    },
-    {
-        alt: 'figma',
-        imgUrl: 'https://img.shields.io/badge/Figma-F24E1E.svg?style=for-the-badge&logo=Figma&logoColor=white',
-    },
-    {
-        alt: 'adobe illustrator',
-        imgUrl: 'https://img.shields.io/badge/Adobe%20Illustrator-FF9A00.svg?style=for-the-badge&logo=Adobe-Illustrator&logoColor=white',
-    },
-    {
-        alt: 'adobe photoshop',
-        imgUrl: 'https://img.shields.io/badge/Adobe%20Photoshop-31A8FF.svg?style=for-the-badge&logo=Adobe-Photoshop&logoColor=white',
-    },
-];
+export const skillsContent = {
+    imgs: [
+        {
+            alt: 'CSS3 logo',
+            imgUrl: 'https://cdn.simpleicons.org/css3/1572B6/',
+        },
+        {
+            alt: 'HTML5 logo',
+            imgUrl: 'https://cdn.simpleicons.org/html5/E34F26/',
+        },
+        {
+            alt: 'JavaScript logo',
+            imgUrl: 'https://cdn.simpleicons.org/javascript/F7DF1E/',
+        },
+        {
+            alt: 'figma logo',
+            imgUrl: 'https://cdn.simpleicons.org/figma/F24E1E/',
+        },
+        {
+            alt: 'adobe illustrator logo',
+            imgUrl: 'https://cdn.simpleicons.org/adobeillustrator/FF9A00/',
+        },
+        {
+            alt: 'adobe photoshop logo',
+            imgUrl: 'https://cdn.simpleicons.org/adobephotoshop/31A8FF/',
+        },
+        {
+            alt: 'tailwind logo',
+            imgUrl: 'https://cdn.simpleicons.org/tailwindcss/06B6D4/',
+        },
+        {
+            alt: 'tailwind logo',
+            imgUrl: 'https://cdn.simpleicons.org/vuedotjs/4FC08D/',
+        },
+    ],
+    imgClasses: ['w-12', 'h-12'],
+}
