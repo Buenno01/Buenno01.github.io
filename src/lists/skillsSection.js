@@ -29,7 +29,7 @@ export const skillsContent = {
             imgUrl: 'https://cdn.simpleicons.org/tailwindcss/06B6D4/',
         },
         {
-            alt: 'tailwind logo',
+            alt: 'vue.js logo',
             imgUrl: 'https://cdn.simpleicons.org/vuedotjs/4FC08D/',
         },
     ],

@@ -7,7 +7,7 @@ function generateSkillList() {
     const skillList = createElement('ul', skillListClasses);
     
     skillsContent.imgs.forEach((skill) => {
-        const skillElement = createElement('li', []);
+        const skillElement = createElement('li', ['relative', 'inline-block']);
         const logo = createElement('img', skillsContent.imgClasses);
         logo.src = skill.imgUrl;
         logo.alt = skill.alt;
@@ -19,7 +19,7 @@ function generateSkillList() {
 }
 
 export const skillsSectionBuilder = () => {
-    const sectionClasses = ['container', 'self-center', 'pt-10'];
+    const sectionClasses = ['container', 'self-center', 'pt-10', 'max-w-3xl', 'px-2', 'md:px-0'];
     const skillsSection = createElement('section', sectionClasses);
     skillsSection.id = 'skills';
 
