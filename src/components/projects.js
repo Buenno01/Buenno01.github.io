@@ -24,17 +24,15 @@ function generateLinks(links) {
     const listClasses = ['flex', 'justify-center', 'gap-5'];
     const list = createElement('div', listClasses);
 
-    const linkClasses = [];
-    const iconClasses = ['w-6', 'h-6'];
+    const iconClasses = ['w-6', 'h-6', 'fill-cyan'];
     links.forEach((l) => {
-        const newLink = createElement('a', linkClasses);
+        const newLink = createElement('a', iconClasses);
         newLink.href = l.url;
         newLink.target = '_blank';
+        newLink.innerHTML = l.icon;
 
-        const icon = createElement('img', iconClasses);
-        icon.src = l.icon;
 
-        newLink.appendChild(icon);
+
         list.appendChild(newLink);
     });
 
@@ -42,19 +40,25 @@ function generateLinks(links) {
 }
 
 function cardDescription(txt) {
-    const textContainerClasses = ['flex', 'flex-col', 'w-11/12', 'self-center', 'justify-center', 'align-start', 'h-32', 'overflow-scroll'];
+    const textContainerClasses = ['flex', 'flex-col', 'w-11/12', 'self-center', 'justify-start', 'align-start', 'h-32', 'overflow-y-scroll', 'overscroll-none', 'pt-2'];
     const textContainer = createElement('div', textContainerClasses);
 
-    const titleClasses = ['text-cyan', 'font-semibold', 'text-xl', 'self-center'];
+    const titleClasses = ['text-cyan', 'font-semibold', 'text-xl', 'text-center'];
 
     txt.forEach((paragraph) => {
         const classes = paragraph.isTitle ? titleClasses : [];
         const newParagraph = createElement(paragraph.tag, classes);
+        newParagraph.innerText = paragraph.content;
 
         textContainer.appendChild(newParagraph);
     });
 
     return textContainer;
+}
+
+function toggleHide(event) {
+    event.target.classList.toggle('hidden');
+    event.target.classList.toggle('flex');
 }
 
 function cardimage(img) {
@@ -78,10 +82,10 @@ function cardimage(img) {
 }
 
 function loadProjects() {
-    const listClasses = ['flex', 'flex-col', 'md:flex-row', 'md:flex-wrap', 'gap-2', 'md:justify-between'];
+    const listClasses = ['flex', 'flex-col', 'gap-2', 'md:flex-row', 'md:flex-wrap', 'md:gap-0', 'md:justify-between'];
     const projectList = createElement('ul', listClasses);
 
-    const cardClasses = ['flex', 'flex-col', 'border', 'rounded-xl', 'p-2', 'md:w-64', 'md:gap-0', 'md:p-3'];
+    const cardClasses = ['flex', 'flex-col', 'border', 'rounded-xl', 'p-2', 'md:w-56', 'md:p-3', 'md:mb-5'];
 
     sectionContent.forEach((project) => {
         const card = createElement('li', cardClasses);
