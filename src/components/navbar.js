@@ -66,16 +66,23 @@ function createHover(itemHover) {
     const hoverClasses = ['md:flex-col', 'md:absolute', 'md:left-0', 'md:right-0', 'md:top-12', 'md:content-start', 'md:px-5', 'md:bg-background2', 'md:rounded-b', 'md:py-2', 'md:border-t', 'hidden'];
     const hoverList = createElement('ul', hoverClasses);
 
-    const hoverItemsClasses = ['text-foreground', 'mt-1', 'hover:text-cyan', 'md:text-start'];
+    const hoverItemsClasses = ['text-foreground', 'mt-1', 'hover:text-cyan', 'md:text-start', 'flex', 'gap-2', 'content-center', 'align-center'];
+    const iconClasses = ['w-4', 'h-4', 'self-center'];
+    const iconColor = '8BE9FD';
 
     itemHover.forEach((link) => {
-        const newSocialLink = createElement('li', hoverItemsClasses);
-        newSocialLink.innerHTML = `
-        <a href="${link.link}" target="_blank">
-        ${link.name}
-        </a>
-        `;
-        hoverList.appendChild(newSocialLink);
+        const newListItem = createElement('li', hoverItemsClasses);
+        const newLink = createElement('a', ['align-center']);
+        newLink.href = link.link;
+        newLink.innerText = link.name;
+
+        const icon = createElement('img', iconClasses);
+        icon.src = `https://cdn.simpleicons.org/${link.icon}/${iconColor}/`;
+
+        newListItem.appendChild(icon);
+        newListItem.appendChild(newLink);
+
+        hoverList.appendChild(newListItem);
     });
     return hoverList;
 }

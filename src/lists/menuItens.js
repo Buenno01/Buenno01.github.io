@@ -4,22 +4,22 @@ export const menuItens = [
         hover: [
             {
                 name: 'Instagram',
-                icon: '<i class="fa-brands fa-instagram"></i>',
+                icon: 'instagram',
                 link: 'https://www.instagram.com/viniciusbuenoc/',
             },
             {
                 name: 'LinkedIn',
-                icon: '<i class="fa-brands fa-linkedin-in"></i>',
+                icon: 'linkedin',
                 link: 'https://www.linkedin.com/in/viniciusbuenocosta/',
             },
             {
                 name: 'GitHub',
-                icon: '<i class="fa-brands fa-github-alt"></i>',
+                icon: 'github',
                 link: 'https://github.com/Buenno01',
             },
             {
                 name: 'E-mail',
-                icon: '<i class="fa-regular fa-envelope"></i>',
+                icon: 'maildotru',
                 link: 'mailto:buenov535@gmail.com',
             },
         ]

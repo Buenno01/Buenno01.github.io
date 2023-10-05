@@ -65,7 +65,8 @@ function cardimage(img) {
     const containerClasses = ['relative', 'text-cyan']
     const container = createElement('div', containerClasses);
 
-    const hiddenContainerClasses = ['absolute', 'left-0', 'right-0', 'p-2', 'flex', 'flex-col', 'justify-between', 'h-full', 'bg-background', 'bg-opacity-75', 'border-b', 'border-cyan'];
+    const hiddenContainerClasses = ['absolute', 'left-0', 'right-0', 'p-2', 'hidden', 'flex-col', 'justify-between', 'h-full', 'bg-background', 'bg-opacity-75', 'border-b', 'border-cyan'];
+
     const hiddenContainer = createElement('div', hiddenContainerClasses);
 
     hiddenContainer.appendChild(generateLinks(img.links));
@@ -81,16 +82,33 @@ function cardimage(img) {
     return container;
 }
 
+function addAppear(event) {
+    if (event.target.tagName === 'LI') {
+        event.target.children[0].children[0].classList.remove('hidden');
+        event.target.children[0].children[0].classList.add('flex');
+    }
+}
+
+function removeAppear(event) {
+    if (event.target.tagName === 'LI') {
+        event.target.children[0].children[0].classList.add('hidden');
+        event.target.children[0].children[0].classList.remove('flex');
+    }
+}
+
 function loadProjects() {
-    const listClasses = ['flex', 'flex-col', 'gap-2', 'md:flex-row', 'md:flex-wrap', 'md:gap-0', 'md:justify-between'];
+    const listClasses = ['flex', 'flex-col', 'gap-2', 'md:flex-row', 'md:flex-wrap', 'md:gap-0', 'md:justify-between', 'pt-2'];
     const projectList = createElement('ul', listClasses);
 
-    const cardClasses = ['flex', 'flex-col', 'border', 'rounded-xl', 'p-2', 'md:w-56', 'md:p-3', 'md:mb-5'];
+    const cardClasses = ['flex', 'flex-col', 'border', 'rounded-xl', 'p-2', 'md:w-56', 'md:p-3', 'md:mb-5', 'group'];
 
     sectionContent.forEach((project) => {
         const card = createElement('li', cardClasses);
         card.appendChild(cardimage(project.img));
         card.appendChild(cardDescription(project.text));
+        card.addEventListener('click', addAppear);
+        card.addEventListener('mouseenter', addAppear);
+        card.addEventListener('mouseleave', removeAppear);
 
         projectList.appendChild(card);
     });

@@ -22,3 +22,24 @@ body{
     background-color: var(--color-background);
     color: var(--color-foreground);
 }
+
+::-webkit-scrollbar { 
+    width: 3px; 
+} 
+  
+/* Track */
+::-webkit-scrollbar-track { 
+    background: none; 
+    border-radius: 3px; 
+} 
+  
+/* Handle */
+::-webkit-scrollbar-thumb { 
+    background: #282A36; 
+    border-radius: 3px; 
+} 
+  
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover { 
+    background: #8BE9FD;
+}
