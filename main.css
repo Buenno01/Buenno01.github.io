@@ -973,6 +973,16 @@ body{
   background: #8BE9FD;
 }
 
+.card-scroll {
+  scrollbar-color: #282A36 none;
+  scrollbar-width: 3px;
+}
+
+.hover\:border-cyan:hover {
+  --tw-border-opacity: 1;
+  border-color: rgb(139 233 253 / var(--tw-border-opacity));
+}
+
 .hover\:bg-background2:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(68 71 90 / var(--tw-bg-opacity));

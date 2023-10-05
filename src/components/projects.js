@@ -40,7 +40,7 @@ function generateLinks(links) {
 }
 
 function cardDescription(txt) {
-    const textContainerClasses = ['flex', 'flex-col', 'w-11/12', 'self-center', 'justify-start', 'align-start', 'h-32', 'overflow-y-scroll', 'overscroll-none', 'pt-2'];
+    const textContainerClasses = ['card-scroll', 'flex', 'flex-col', 'w-11/12', 'self-center', 'justify-start', 'align-start', 'h-32', 'overflow-y-scroll', 'overscroll-none', 'pt-2'];
     const textContainer = createElement('div', textContainerClasses);
 
     const titleClasses = ['text-cyan', 'font-semibold', 'text-xl', 'text-center'];
@@ -100,7 +100,7 @@ function loadProjects() {
     const listClasses = ['flex', 'flex-col', 'gap-2', 'md:flex-row', 'md:flex-wrap', 'md:gap-0', 'md:justify-between', 'pt-2'];
     const projectList = createElement('ul', listClasses);
 
-    const cardClasses = ['flex', 'flex-col', 'border', 'rounded-xl', 'p-2', 'md:w-56', 'md:p-3', 'md:mb-5', 'group'];
+    const cardClasses = ['flex', 'flex-col', 'border', 'hover:border-cyan', 'rounded-xl', 'p-2', 'md:w-56', 'md:p-3', 'md:mb-5', 'group'];
 
     sectionContent.forEach((project) => {
         const card = createElement('li', cardClasses);
