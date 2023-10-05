@@ -82,7 +82,7 @@ function cardimage(img) {
 }
 
 function loadProjects() {
-    const listClasses = ['flex', 'flex-col', 'gap-2', 'md:flex-row', 'md:flex-wrap', 'md:gap-0', 'md:justify-between'];
+    const listClasses = ['flex', 'flex-col', 'gap-2', 'md:flex-row', 'md:flex-wrap', 'md:gap-0', 'md:justify-between', 'pt-2'];
     const projectList = createElement('ul', listClasses);
 
     const cardClasses = ['flex', 'flex-col', 'border', 'rounded-xl', 'p-2', 'md:w-56', 'md:p-3', 'md:mb-5'];

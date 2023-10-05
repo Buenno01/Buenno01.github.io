@@ -2,35 +2,55 @@ export const skillsContent = {
     imgs: [
         {
             alt: 'CSS3 logo',
-            imgUrl: 'https://cdn.simpleicons.org/css3/1572B6/',
+            imgUrl: 'css',
         },
         {
             alt: 'HTML5 logo',
-            imgUrl: 'https://cdn.simpleicons.org/html5/E34F26/',
+            imgUrl: 'html',
         },
         {
             alt: 'JavaScript logo',
-            imgUrl: 'https://cdn.simpleicons.org/javascript/F7DF1E/',
+            imgUrl: 'js',
         },
         {
             alt: 'figma logo',
-            imgUrl: 'https://cdn.simpleicons.org/figma/F24E1E/',
+            imgUrl: 'figma',
         },
         {
             alt: 'adobe illustrator logo',
-            imgUrl: 'https://cdn.simpleicons.org/adobeillustrator/FF9A00/',
+            imgUrl: 'ai',
         },
         {
             alt: 'adobe photoshop logo',
-            imgUrl: 'https://cdn.simpleicons.org/adobephotoshop/31A8FF/',
+            imgUrl: 'ps',
         },
         {
             alt: 'tailwind logo',
-            imgUrl: 'https://cdn.simpleicons.org/tailwindcss/06B6D4/',
+            imgUrl: 'tailwind',
         },
         {
             alt: 'vue.js logo',
-            imgUrl: 'https://cdn.simpleicons.org/vuedotjs/4FC08D/',
+            imgUrl: 'vue',
+        },
+        {
+            alt: 'node js logo',
+            imgUrl: 'nodejs',
+        },
+        {
+            alt: 'linux',
+            imgUrl: 'linux',
+        },
+        {
+            alt: 'jest',
+            imgUrl: 'jest',
+        },
+        {
+            alt: 'gitHub',
+            imgUrl: 'github',
+        },
+        {
+            alt: 'git',
+            imgUrl: 'git',
         },
     ],
     imgClasses: ['w-12', 'h-12'],

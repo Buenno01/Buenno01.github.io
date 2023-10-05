@@ -3,13 +3,13 @@ import { createElement } from "../elementBuilder.js";
 import { skillsContent } from "../lists/skillsSection.js";
 
 function generateSkillList() {
-    const skillListClasses = ['flex', 'gap-2', 'md:gap-5'];
+    const skillListClasses = ['flex', 'gap-2', 'md:gap-5', 'flex-wrap', 'pt-2'];
     const skillList = createElement('ul', skillListClasses);
     
     skillsContent.imgs.forEach((skill) => {
         const skillElement = createElement('li', ['relative', 'inline-block']);
         const logo = createElement('img', skillsContent.imgClasses);
-        logo.src = skill.imgUrl;
+        logo.src = `https://skillicons.dev/icons?i=${skill.imgUrl}`;
         logo.alt = skill.alt;
         skillElement.appendChild(logo);
         skillList.appendChild(skillElement);
