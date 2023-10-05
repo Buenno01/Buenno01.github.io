@@ -2,16 +2,16 @@ import { menuItens } from "../lists/menuItens.js";
 
 import { createElement } from "../elementBuilder.js";
 
-function toggleHover(event) {
-    console.log(event.target)
-    if (event.target.tagName === 'LI'){
-        event.target.children[1].classList.toggle('hidden');
-        event.target.children[1].classList.toggle('md:flex');
-        event.target.classList.toggle('text-cyan')
-    } else {
-        event.target.nextSibling.classList.toggle('hidden');
-        event.target.nextSibling.classList.toggle('md:flex');
-        event.target.parentNode.classList.toggle('text-cyan')
+function toggleHover() {
+    if (this.tagName === 'LI'){
+        this.children[1].classList.toggle('hidden');
+        this.children[1].classList.toggle('md:flex');
+        this.classList.toggle('text-cyan');
+    }
+    else {
+        this.nextSibling.classList.toggle('hidden');
+        this.nextSibling.classList.toggle('md:flex');
+        this.parentNode.classList.toggle('text-cyan');
     }
 }
 
@@ -108,6 +108,17 @@ function createHover(itemHover) {
     return hoverList;
 }
 
+function smoothScroll(event) {
+    event.preventDefault();
+    const hashItem = this.hash;
+    const section = document.querySelector(hashItem);
+
+    window.scrollTo({
+      top: section.offsetTop,
+      behavior: "smooth",
+    });
+}
+
 function menuItensBuilder() {
     const menuClasses = ['flex-col', 'text-center', 'absolute', 'left-0', 'right-0','top-10', 'bg-background', 'w-full', 'm-0','py-3', 'bg-opacity-95', 'hidden', 'max-w-xl', 'z-20', 'border-b-2', 'border-cyan', 'md:border-0', 'md:flex', 'md:flex-row', 'md:static', 'md:bg-opacity-100', 'md:content-baseline', 'md:justify-between', 'md:mr-20', 'md:p-0'];
     const itensList = createElement('nav', menuClasses);
@@ -117,10 +128,22 @@ function menuItensBuilder() {
     menuItens.forEach((item) => {
         const newItem = createElement('li', itemsClasses);
         if (item.link) {
-            newItem.innerHTML = `
-        <a href=${item.link}>${item.name}</a>`;
+            const newLink = createElement('a', []);
+            newLink.href = item.link;
+            newLink.innerText = item.name;
+            newLink.addEventListener('click', smoothScroll);
+            
+            newItem.appendChild(newLink);
+
         } else {
-            newItem.innerHTML = `<p class="flex gap-2">${item.name}<img src="/assets/icons/caretDown.svg"/></p>`
+            const newTitle = createElement('p', ['flex', 'gap-2','content-center', 'justify-center']);
+            const newCaret = createElement('img', ['w-px']);
+            newTitle.innerText = item.name;
+            newCaret.src = "/assets/icons/caretDown.svg";
+            newCaret.style.filter = 'invert(100%) sepia(100%) saturate(0%) hue-rotate(114deg) brightness(104%) contrast(101%)';
+
+            newTitle.appendChild(newCaret);
+            newItem.appendChild(newTitle);
         }
         if (item.hover) {
             const hoverMenu = createHover(item.hover);
