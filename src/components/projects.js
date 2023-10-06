@@ -13,6 +13,7 @@ function generateTechs(Arr) {
         const newTech = createElement('li', techClasses);
         const icon = createElement('img', iconClasses);
         icon.src = `https://cdn.simpleicons.org/${tech}/${iconColorHex}/`;
+        icon.title = tech;
         newTech.appendChild(icon);
         techList.appendChild(newTech);
     });
@@ -54,11 +55,6 @@ function cardDescription(txt) {
     });
 
     return textContainer;
-}
-
-function toggleHide(event) {
-    event.target.classList.toggle('hidden');
-    event.target.classList.toggle('flex');
 }
 
 function cardimage(img) {
