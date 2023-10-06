@@ -11,6 +11,7 @@ function generateSkillList() {
         const logo = createElement('img', skillsContent.imgClasses);
         logo.src = `https://skillicons.dev/icons?i=${skill.imgUrl}`;
         logo.alt = skill.alt;
+        logo.title = skill.alt;
         skillElement.appendChild(logo);
         skillList.appendChild(skillElement);
     });
