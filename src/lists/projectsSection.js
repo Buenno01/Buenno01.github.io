@@ -131,15 +131,4 @@ export const sectionContent = [
         }
         
     },
-]
-
-const techUrl = {
-
-    tailwind: 'https://cdn.simpleicons.org/tailwindcss/06B6D4/',
-
-    vue3: 'https://cdn.simpleicons.org/vuedotjs/4FC08D/',
-
-    Github: 'https://cdn.simpleicons.org/github/8BE9FD/',
-
-    Git: 'https://cdn.simpleicons.org/git/F05032/',
-}
+];
