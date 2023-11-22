@@ -1,6 +1,13 @@
 import { smoothScroll } from '../util/smoothScroll';
 
-function MenuItem() {
+type MenuLink = {
+  title: string,
+  url: string,
+};
+
+function MenuItem(props: MenuLink) {
+  const { title, url } = props;
+
   return (
     <li
       className="flex flex-col content-center align-center cursor-pointer
@@ -9,11 +16,11 @@ function MenuItem() {
     md:border-b md:border-background md:hover:border-cyan text-xl"
     >
       <a
-        onClick={smoothScroll}
-        onTouchStart={smoothScroll}
-        href="{some prop}"
+        onClick={ smoothScroll }
+        onTouchStart={ smoothScroll }
+        href={ url }
       >
-        mock up
+        { title }
       </a>
     </li>
   );
