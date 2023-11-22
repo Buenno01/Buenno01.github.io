@@ -5,6 +5,6 @@ export function smoothScroll(event: any): void {
 
   window.scrollTo({
     top: section.offsetTop,
-    behavior: "smooth",
+    behavior: 'smooth',
   });
 }

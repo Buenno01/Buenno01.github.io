@@ -1,10 +1,11 @@
 export const getGithubUser = async (user: string) => {
   try {
     const response = await fetch(`https://api.github.com/users/${user}`);
-    if (!response.ok) { throw new Error('Could not fetch the api!') }
+    if (!response.ok) { throw new Error('Could not fetch the api!'); }
     const data = await response.json();
 
-    const { bio, email, avatar_url: avatar, html_url: githubProfile, name, repos_url: reposUrl }: any = data;
+    const { bio, email, avatar_url: avatar, html_url: githubProfile,
+      name, repos_url: reposUrl }: any = data;
 
     const formattedData: object = {
       bio,
@@ -24,7 +25,7 @@ export const getGithubUser = async (user: string) => {
 const getAllRepos = async (reposUrl: string) => {
   try {
     const response = await fetch(reposUrl);
-    if (!response.ok) { throw new Error('Could not find the repos') }
+    if (!response.ok) { throw new Error('Could not find the repos'); }
     const data = await response.json();
     const formattedData = data.map((repo: any) => ({
       name: repo.name,
@@ -37,4 +38,4 @@ const getAllRepos = async (reposUrl: string) => {
   } catch (error: any) {
     console.log(error.message);
   }
-}
+};

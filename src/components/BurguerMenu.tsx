@@ -19,10 +19,11 @@ function BurguerMenu() {
       onClick={showMenu}
       onTouchEnd={showMenu}
       onMouseEnter={showMenu}
-      className="flex flex-col justify-items-center gap-2 p-0 md:hidden cursor-pointer">
-      <span className="bg-cyan rounded" style={{ height: '3px', width: '30px' }}></span>
-      <span className="bg-cyan rounded" style={{ height: '3px', width: '30px' }}></span>
-      <span className="bg-cyan rounded" style={{ height: '3px', width: '30px' }}></span>
+      className="flex flex-col justify-items-center gap-2 p-0 md:hidden cursor-pointer"
+    >
+      <span className="bg-cyan rounded" style={{ height: '3px', width: '30px' }} />
+      <span className="bg-cyan rounded" style={{ height: '3px', width: '30px' }} />
+      <span className="bg-cyan rounded" style={{ height: '3px', width: '30px' }} />
     </div>
   );
 }
