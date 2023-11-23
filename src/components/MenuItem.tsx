@@ -1,12 +1,7 @@
-import { smoothScroll } from '../util/smoothScroll';
-
-type MenuLink = {
-  title: string,
-  url: string,
-};
+import { MenuLink } from '../types';
 
 function MenuItem(props: MenuLink) {
-  const { title, url } = props;
+  const { title, url = '#' } = props;
 
   return (
     <li
@@ -16,9 +11,9 @@ function MenuItem(props: MenuLink) {
     md:border-b md:border-background md:hover:border-cyan text-xl"
     >
       <a
-        onClick={ smoothScroll }
-        onTouchStart={ smoothScroll }
         href={ url }
+        target="_blank"
+        rel="noreferrer"
       >
         { title }
       </a>
