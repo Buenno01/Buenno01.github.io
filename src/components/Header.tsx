@@ -4,12 +4,13 @@ import RightMenu from './NavBar/RightMenu';
 function Header() {
   return (
     <header
-      className="flex flex-row content-between flex-nowrap
-    bg-background shadow-md text-foreground  border-0 py-2
-    md:px-3 md:py-0"
+      className="bg-background shadow-md text-foreground
+      border-0 fixed h-16 w-full flex justify-center"
     >
-      <LeftMenu />
-      <RightMenu />
+      <div className="container self-center">
+        <LeftMenu />
+        <RightMenu />
+      </div>
     </header>
   );
 }

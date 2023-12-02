@@ -18,7 +18,7 @@ function NavMenu() {
     },
     {
       title: 'Projects',
-      url: '#',
+      url: '#projects',
     },
     {
       title: 'Skills',
