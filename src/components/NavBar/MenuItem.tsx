@@ -1,4 +1,4 @@
-import { MenuLink } from '../types';
+import { MenuLink } from '../../types';
 
 function MenuItem(props: MenuLink) {
   const { title, url = '#' } = props;

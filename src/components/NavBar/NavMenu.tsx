@@ -1,4 +1,4 @@
-import { MenuLink } from '../types';
+import { MenuLink } from '../../types';
 import MenuItem from './MenuItem';
 
 function NavMenu() {

@@ -29,6 +29,12 @@ export default {
           DEFAULT: '#8BE9FD',
         },
       },
+      flexGrow: {
+        2: '2',
+      },
+      backgroundSize: {
+        'full': '100%',
+      }
     },
   },
   plugins: [],

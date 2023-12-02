@@ -1,5 +1,5 @@
-import LeftMenu from './LeftMenu';
-import RightMenu from './RightMenu';
+import LeftMenu from './NavBar/LeftMenu';
+import RightMenu from './NavBar/RightMenu';
 
 function Header() {
   return (
