@@ -32,9 +32,6 @@ export default {
       flexGrow: {
         2: '2',
       },
-      backgroundSize: {
-        'full': '100%',
-      }
     },
   },
   plugins: [],
