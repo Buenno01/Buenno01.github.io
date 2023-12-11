@@ -12,11 +12,11 @@ const links = [
   },
   {
     title: 'Sobre',
-    internalHash: '#root',
+    internalHash: '#about-me',
   },
   {
     title: 'Projetos',
-    internalHash: '#root',
+    internalHash: '#projects',
   },
   {
     title: 'Habilidades',

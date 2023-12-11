@@ -1,12 +1,13 @@
-import React, { ReactNode } from 'react';
+import { ReactNode } from 'react';
 
 type SectionRootProps = {
   children: ReactNode,
+  id: string,
 };
 
-function SectionRoot({ children }: SectionRootProps) {
+function SectionRoot({ children, id }: SectionRootProps) {
   return (
-    <section>
+    <section className="h-screen" id={ id }>
       { children }
     </section>
   );
