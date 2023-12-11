@@ -1,9 +1,12 @@
 import ReactDOM from 'react-dom/client';
+import { BrowserRouter } from 'react-router-dom';
 import App from './App';
 import './main.css';
-// import { getGithubUser } from './services/githubApi';
-// const githubData = await getGithubUser('Buenno01');
+import ScrollToAnchor from './util/ScrollToAnchor';
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
-  <App />,
+  <BrowserRouter>
+    <ScrollToAnchor />
+    <App />
+  </BrowserRouter>,
 );
