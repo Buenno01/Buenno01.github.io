@@ -1,24 +1,25 @@
+import { ProjectType } from '../@types/type';
 import calculator from '../assets/calculator.png';
 import pixelEditor from '../assets/pixel-editor.png';
 import todoList from '../assets/todo-list.png';
 import weather from '../assets/weather.png';
 
-export const projects = [
+export const projects: ProjectType[] = [
   {
     name: 'calculator',
-    img: calculator,
+    imgUrl: calculator,
   },
   {
     name: 'pixel-editor',
-    img: pixelEditor,
+    imgUrl: pixelEditor,
   },
   {
     name: 'todo-list',
-    img: todoList,
+    imgUrl: todoList,
   },
   {
     name: 'weather',
-    img: weather,
+    imgUrl: weather,
   },
 ];
 

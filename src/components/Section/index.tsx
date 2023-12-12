@@ -2,10 +2,12 @@ import SectionRoot from './SectionRoot';
 import SectionParagraph from './SectionParagraph';
 import SectionTitle from './SectionTitle';
 import SectionTextBox from './SectionTextBox';
+import SectionProjectTileBox from './SectionProjectTileBox';
 
 export const Section = {
   Root: SectionRoot,
   Title: SectionTitle,
   Paragraph: SectionParagraph,
   TextBox: SectionTextBox,
+  ProjectTileBox: SectionProjectTileBox,
 };

@@ -9,9 +9,9 @@ function Home() {
         <Section.TextBox paragraphs={ contents.aboutMe } />
       </Section.Root>
 
-      <Section.Root reverse id="projects" customClass="h-screen">
+      <Section.Root reverse id="projects">
         <Section.Title headline="projects" />
-        <Section.TextBox paragraphs={ contents.aboutMe } />
+        <Section.ProjectTileBox projects={ projects } />
       </Section.Root>
     </>
   );

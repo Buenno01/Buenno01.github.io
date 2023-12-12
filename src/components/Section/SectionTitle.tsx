@@ -5,7 +5,7 @@ function SectionTitle({ headline }: SectionTitleProps) {
   return (
     <h2
       className="text-5xl uppercase max-w-full break-words
-      flex flex-col items-center relative text-center mb-4
+      flex flex-col items-center relative text-center mb-6
       sm:w-fit sm:max-w-xs sm:group-data-reverse:self-end
       lg:w-1/2 lg:max-w-none
 
