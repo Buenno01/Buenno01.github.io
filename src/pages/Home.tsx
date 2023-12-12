@@ -1,4 +1,5 @@
 import { Section } from '../components/Section';
+import SectionTextBox from '../components/Section/SectionTextBox';
 
 const contents = {
   aboutMe: [
@@ -14,28 +15,24 @@ const contents = {
     `Após um ano nesse modelo, percebi que era necessário fazer uma 
     pausa no meu trabalho, que no momento era de garçom, para focar em 
     me desenvolver profissionalmente. Desde então, tenho estudado 
-    programação full-stack na <a href="https://www.betrybe.com/" target="_blank" rel="noreferrer">Trybe</a>.`,
+    programação full-stack na Trybe.`,
   ],
 
 };
 
 function Home() {
   return (
-    <main>
+    <>
       <Section.Root id="about-me">
         <Section.Title headline="Sobre mim" />
-        {
-        contents.aboutMe.map((paragraph, index) => (
-          <Section.Paragraph key={ index }>
-            {paragraph}
-          </Section.Paragraph>
-        ))
-        }
+        <SectionTextBox paragraphs={ contents.aboutMe } />
       </Section.Root>
-      <Section.Root id="projects">
+
+      <Section.Root reverse id="projects" customClass="h-screen">
         <Section.Title headline="projects" />
+        <SectionTextBox paragraphs={ contents.aboutMe } />
       </Section.Root>
-    </main>
+    </>
   );
 }
 

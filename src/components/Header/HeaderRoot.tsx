@@ -9,8 +9,9 @@ function HeaderRoot({ children }:HeaderRootProps) {
     <>
       <div className="h-9" />
       <header
-        className={ `flex justify-between items-center pr-2 w-full fixed max-h-9
-      text-lg` }
+        className={ `flex justify-between items-center pr-2 w-full 
+        fixed max-h-9 z-10
+        text-lg` }
       >
         { children }
 

@@ -20,7 +20,7 @@ function HeaderLinkList({ links, handleMenuVisibility,
     >
       <nav
         className="flex flex-col gap-2 bg-zinc-200 dark:bg-zinc-900 w-full h-fit
-        py-3 text-start px-3"
+        pt-3 text-start px-3"
       >
         {
           links.map((link) => (
