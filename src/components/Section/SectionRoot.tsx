@@ -12,7 +12,8 @@ function SectionRoot({ children, id,
   customClass = '', reverse = false }: SectionRootProps) {
   return (
     <section
-      className={ twMerge('sm:self-center sm:flex sm:flex-col group px-4', customClass) }
+      className={ twMerge(`sm:self-center sm:flex sm:flex-col
+      group px-4 pt-8`, customClass) }
       id={ id }
       data-reverse={ reverse }
     >

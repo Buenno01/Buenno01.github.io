@@ -15,12 +15,17 @@ function HeaderLinkList({ links, handleMenuVisibility,
   menuIsVisible }:HeaderLinkListProps) {
   return (
     <menu
-      className={ `${menuIsVisible ? 'flex' : 'hidden'} md:flex fixed
-      top-9 w-screen h-screen flex-col` }
+      className={ `
+      ${menuIsVisible ? 'flex' : 'hidden'} md:flex
+      fixed md:static top-9 md:top-0
+      w-screen h-screen md:w-full md:h-auto flex-col` }
     >
       <nav
-        className="flex flex-col gap-2 bg-zinc-200 dark:bg-zinc-900 w-full h-fit
-        pt-3 text-start px-3"
+        className="flex flex-col md:flex-row gap-2 md:gap-6
+        bg-zinc-200 dark:bg-zinc-900
+        md:bg-transparent md:dark:bg-transparent
+        w-full h-fit pt-3 px-3
+        text-start"
       >
         {
           links.map((link) => (
@@ -29,7 +34,7 @@ function HeaderLinkList({ links, handleMenuVisibility,
         }
       </nav>
       <button
-        className="h-full w-full bg-zinc-900 bg-opacity-30 dark:bg-opacity-60"
+        className="h-full w-full bg-zinc-900 bg-opacity-30 dark:bg-opacity-60 md:hidden"
         aria-label="hide menu"
         onClick={ handleMenuVisibility }
       />

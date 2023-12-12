@@ -44,7 +44,7 @@ function Layout() {
         <Header.DarkModeButton DarkIcon={ <GiMoonBats /> } LightIcon={ <GiSundial /> } />
       </Header.Root>
       <main
-        className="px-1 flex flex-col sm:items-center gap-10 relative
+        className="px-1 flex flex-col sm:items-center gap-6 relative
       sm:container self-center"
       >
         <Outlet />

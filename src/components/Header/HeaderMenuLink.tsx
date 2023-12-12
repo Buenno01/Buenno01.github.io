@@ -14,7 +14,8 @@ function HeaderMenuLink({ title, internalHash }:HeaderMenuLinkProps) {
     <Link
       className="border-b
       border-black dark:border-white
-      border-opacity-10 dark:border-opacity-25"
+      border-opacity-10 dark:border-opacity-25
+      md:border-opacity-0 md:dark:border-opacity-0"
       to={ `/${internalHash}` }
       aria-label={ `navigate to ${title} section on this page` }
     >

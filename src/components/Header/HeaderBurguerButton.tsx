@@ -21,6 +21,7 @@ function HeaderBurguerButton({ handleMenuVisibility, NotVisibleIcon,
       className={ `text-4xl rounded
       hover:bg-zinc-200 active:bg-zinc-100
       dark:hover:bg-zinc-900 dark:active:bg-zinc-800 
+      md:hidden
       ${menuIsVisible
         && visibleMenuStyle} ` }
     >
