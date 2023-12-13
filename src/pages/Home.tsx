@@ -1,12 +1,14 @@
 import { Section } from '../components/Section';
-import { contents, projects, hardSkills, tools } from '../util/mock';
+import { data } from '../util/mock';
+
+const { aboutMe, projects, skills } = data;
 
 function Home() {
   return (
     <>
       <Section.Root id="about-me">
         <Section.Title headline="Sobre mim" />
-        <Section.TextBox paragraphs={ contents.aboutMe } />
+        <Section.TextBox paragraphs={ aboutMe } />
       </Section.Root>
 
       <Section.Root reverse id="projects">
@@ -16,14 +18,15 @@ function Home() {
 
       <Section.Root id="skills">
         <Section.Title headline="habilidades" />
-        <Section.SkillsGrid
-          skills={ hardSkills }
-          headline="Hard-Skills"
-        />
-        <Section.SkillsGrid
-          skills={ tools }
-          headline="Ferramentas"
-        />
+        {
+          skills.map((skillType) => (
+            <Section.SkillsGrid
+              key={ skillType.headline }
+              skills={ skillType.content }
+              headline={ skillType.headline }
+            />
+          ))
+        }
       </Section.Root>
     </>
   );

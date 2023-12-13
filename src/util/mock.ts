@@ -1,11 +1,11 @@
-import { FaGitAlt, FaReact, FaGithub, FaNodeJs, FaHtml5, FaFigma, FaSlack, FaTrello, FaVuejs, FaLinux, FaLinkedin, FaLinkedinIn } from 'react-icons/fa';
+import { FaGitAlt, FaReact, FaGithub, FaNodeJs, FaHtml5, FaFigma,
+  FaSlack, FaTrello, FaVuejs, FaLinux, FaLinkedinIn } from 'react-icons/fa';
 import { IoLogoCss3 } from 'react-icons/io';
-import { SiJest, SiTailwindcss, SiAdobephotoshop, SiAdobeillustrator } from 'react-icons/si';
+import { SiJest, SiTailwindcss, SiAdobephotoshop,
+  SiAdobeillustrator } from 'react-icons/si';
 import { BiLogoTypescript } from 'react-icons/bi';
 import { IoLogoJavascript } from 'react-icons/io5';
 import { FiFramer } from 'react-icons/fi';
-import { AiFillInstagram } from 'react-icons/ai';
-import { FaSquareGithub } from 'react-icons/fa6';
 import { MdAlternateEmail } from 'react-icons/md';
 import { LuGithub, LuInstagram } from 'react-icons/lu';
 import { ProjectType, SkillType, SocialMediaType } from '../@types/type';
@@ -164,3 +164,19 @@ export const socialMedia: SocialMediaType[] = [
     Icon: MdAlternateEmail,
   },
 ];
+
+export const data = {
+  aboutMe: contents.aboutMe,
+  projects,
+  skills: [
+    {
+      headline: 'Hard-Skills',
+      content: hardSkills,
+    },
+    {
+      headline: 'Ferramentas',
+      content: tools,
+    },
+  ],
+  socialMedia,
+};
