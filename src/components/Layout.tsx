@@ -45,7 +45,7 @@ function Layout() {
       </Header.Root>
       <main
         className="px-1 flex flex-col sm:items-center gap-6 relative
-      sm:container self-center"
+      sm:container self-center max-w-full"
       >
         <Outlet />
       </main>

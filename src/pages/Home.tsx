@@ -1,5 +1,5 @@
 import { Section } from '../components/Section';
-import { contents, projects } from '../util/mock';
+import { contents, projects, hardSkills, tools } from '../util/mock';
 
 function Home() {
   return (
@@ -10,8 +10,20 @@ function Home() {
       </Section.Root>
 
       <Section.Root reverse id="projects">
-        <Section.Title headline="projects" />
+        <Section.Title headline="projetos" />
         <Section.ProjectTileBox projects={ projects } />
+      </Section.Root>
+
+      <Section.Root id="skills">
+        <Section.Title headline="habilidades" />
+        <Section.SkillsGrid
+          skills={ hardSkills }
+          headline="Hard-Skills"
+        />
+        <Section.SkillsGrid
+          skills={ tools }
+          headline="Ferramentas"
+        />
       </Section.Root>
     </>
   );

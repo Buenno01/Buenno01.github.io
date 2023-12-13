@@ -1,4 +1,10 @@
-import { ProjectType } from '../@types/type';
+import { FaGitAlt, FaReact, FaGithub, FaNodeJs, FaHtml5, FaFigma, FaSlack, FaTrello, FaVuejs, FaLinux } from 'react-icons/fa';
+import { IoLogoCss3 } from 'react-icons/io';
+import { SiJest, SiTailwindcss, SiAdobephotoshop, SiAdobeillustrator } from 'react-icons/si';
+import { BiLogoTypescript } from 'react-icons/bi';
+import { IoLogoJavascript } from 'react-icons/io5';
+import { FiFramer } from 'react-icons/fi';
+import { ProjectType, SkillType } from '../@types/type';
 import calculator from '../assets/calculator.png';
 import pixelEditor from '../assets/pixel-editor.png';
 import todoList from '../assets/todo-list.png';
@@ -53,3 +59,81 @@ export const contents = {
   ],
 
 };
+
+export const hardSkills: SkillType[] = [
+  {
+    Icon: FaReact,
+    name: 'React',
+  },
+  {
+    Icon: FaNodeJs,
+    name: 'Node.js',
+  },
+  {
+    Icon: SiJest,
+    name: 'Jest',
+  },
+  {
+    Icon: BiLogoTypescript,
+    name: 'TypeScript',
+  },
+  {
+    Icon: IoLogoJavascript,
+    name: 'JavaScript',
+  },
+  {
+    Icon: IoLogoCss3,
+    name: 'CSS3',
+  },
+  {
+    Icon: FaHtml5,
+    name: 'HTML5',
+  },
+  {
+    Icon: SiTailwindcss,
+    name: 'Tailwind',
+  },
+  {
+    Icon: FiFramer,
+    name: 'Framer',
+  },
+  {
+    Icon: FaVuejs,
+    name: 'Vue',
+  },
+];
+
+export const tools: SkillType[] = [
+  {
+    Icon: FaGitAlt,
+    name: 'Git',
+  },
+  {
+    Icon: FaGithub,
+    name: 'GitHub',
+  },
+  {
+    Icon: FaFigma,
+    name: 'Figma',
+  },
+  {
+    Icon: FaSlack,
+    name: 'Slack',
+  },
+  {
+    Icon: FaTrello,
+    name: 'Trello',
+  },
+  {
+    Icon: SiAdobephotoshop,
+    name: 'Photoshop',
+  },
+  {
+    Icon: SiAdobeillustrator,
+    name: 'Illustrator',
+  },
+  {
+    Icon: FaLinux,
+    name: 'Linux',
+  },
+];

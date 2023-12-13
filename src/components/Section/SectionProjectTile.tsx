@@ -33,8 +33,7 @@ function SectionProjectTile({ project, id, isOnId, setIsOnId }: SectionProjectTi
     <motion.div
       id={ id }
       className="flex flex-col flex-grow
-      overflow-hidden items-center relative
-      cursor-pointer hover:z-10 hover:shadow-2xl"
+      overflow-hidden items-center relative"
       onMouseEnter={ () => { setIsOnId(id); } }
       onMouseLeave={ () => { setIsOnId(undefined); } }
       onTouchEnd={ () => { handleTouch(); } }

@@ -3,6 +3,7 @@ import SectionParagraph from './SectionParagraph';
 import SectionTitle from './SectionTitle';
 import SectionTextBox from './SectionTextBox';
 import SectionProjectTileBox from './SectionProjectTileBox';
+import SectionSkillsGrid from './SectionSkillsGrid';
 
 export const Section = {
   Root: SectionRoot,
@@ -10,4 +11,5 @@ export const Section = {
   Paragraph: SectionParagraph,
   TextBox: SectionTextBox,
   ProjectTileBox: SectionProjectTileBox,
+  SkillsGrid: SectionSkillsGrid,
 };
