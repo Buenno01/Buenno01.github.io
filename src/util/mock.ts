@@ -8,18 +8,30 @@ export const projects: ProjectType[] = [
   {
     name: 'calculator',
     imgUrl: calculator,
+    deployUrl: 'https://google.com',
+    repoUrl: 'https://google.com',
+    techList: ['javascript', 'css', 'html'],
   },
   {
     name: 'pixel-editor',
     imgUrl: pixelEditor,
+    deployUrl: 'https://google.com',
+    repoUrl: 'https://google.com',
+    techList: ['javascript', 'css', 'html'],
   },
   {
     name: 'todo-list',
     imgUrl: todoList,
+    deployUrl: 'https://google.com',
+    repoUrl: 'https://google.com',
+    techList: ['javascript', 'css', 'html'],
   },
   {
     name: 'weather',
     imgUrl: weather,
+    deployUrl: 'https://google.com',
+    repoUrl: 'https://google.com',
+    techList: ['javascript', 'css', 'html'],
   },
 ];
 

@@ -1,46 +1,69 @@
+import { Dispatch, SetStateAction, useEffect, useState } from 'react';
+import { motion } from 'framer-motion';
 import { ProjectType } from '../../@types/type';
+import { Tile } from './Tile';
 
 type SectionProjectTileProps = {
   project: ProjectType,
+  id: string,
+  isOnId: string | undefined,
+  setIsOnId: Dispatch<SetStateAction<string | undefined>>
 };
 
-function SectionProjectTile({ project }: SectionProjectTileProps) {
+function SectionProjectTile({ project, id, isOnId, setIsOnId }: SectionProjectTileProps) {
+  const [isOn, setIsOn] = useState(false);
+
+  useEffect(() => {
+    if (id === isOnId) {
+      setIsOn(true);
+    } else {
+      setIsOn(false);
+    }
+  }, [isOnId, id]);
+
+  function handleTouch() {
+    if (id !== isOnId) {
+      setIsOnId(id);
+    } else {
+      setIsOnId(undefined);
+    }
+  }
+
   return (
-    <div
-      className="flex flex-col flex-grow hover:flex-grow-2
-      overflow-hidden items-center relative hover:scale-150
-      cursor-pointer hover:z-20 hover:shadow-2xl"
+    <motion.div
+      id={ id }
+      className="flex flex-col flex-grow
+      overflow-hidden items-center relative
+      cursor-pointer hover:z-10 hover:shadow-2xl"
+      onMouseEnter={ () => { setIsOnId(id); } }
+      onMouseLeave={ () => { setIsOnId(undefined); } }
+      onTouchEnd={ () => { handleTouch(); } }
+      animate={ {
+        flexGrow: isOn ? 2 : 1,
+      } }
     >
-      <div
-        className="z-10
-        h-28 w-full flex flex-col justify-center
-        text-center opacity-0
-        duration-700 transition-all
-
-        hover:scale-150 hover:opacity-100
-        hover:bg-gradient-to-r
-        hover:from-white hover:via-transparent hover:to-white
-        hover:dark:from-zinc-800 hover:dark:via-transparent hover:dark:to-zinc-800
-
-        active:scale-150 active:opacity-100
-        active:bg-gradient-to-r
-        active:from-white active:via-transparent active:to-white
-        active:dark:from-zinc-800 active:dark:via-transparent active:dark:to-zinc-800"
+      <motion.img
+        className="absolute left-0 right-0 top-0"
+        src={ project.imgUrl }
+        animate={ {
+          opacity: isOn ? 0.2 : 1,
+        } }
+      />
+      <motion.div
+        className={ `${isOn ? 'flex' : 'hidden'} z-20 
+        h-full w-full flex-col justify-center
+        text-center absolute` }
+        animate={ {
+          opacity: isOn ? 1 : 0,
+        } }
       >
-        <h3 className="text-xl font-medium uppercase">
+        <Tile.Links { ... project } />
+        <h3 className="text-2xl font-medium uppercase">
           {project.name}
         </h3>
-
-      </div>
-
-      <img
-        className="z-0 absolute"
-        src={ project.imgUrl }
-        alt={ `${project.name} main page` }
-      />
-      <div />
-
-    </div>
+        <Tile.TechList techList={ project.techList } />
+      </motion.div>
+    </motion.div>
   );
 }
 
