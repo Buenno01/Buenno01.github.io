@@ -12,3 +12,9 @@ export type SkillType = {
   name: string,
   Icon: ElementType
 };
+
+export type SocialMediaType = {
+  name: string,
+  url: string,
+  Icon: ElementType,
+};

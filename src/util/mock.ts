@@ -1,10 +1,14 @@
-import { FaGitAlt, FaReact, FaGithub, FaNodeJs, FaHtml5, FaFigma, FaSlack, FaTrello, FaVuejs, FaLinux } from 'react-icons/fa';
+import { FaGitAlt, FaReact, FaGithub, FaNodeJs, FaHtml5, FaFigma, FaSlack, FaTrello, FaVuejs, FaLinux, FaLinkedin, FaLinkedinIn } from 'react-icons/fa';
 import { IoLogoCss3 } from 'react-icons/io';
 import { SiJest, SiTailwindcss, SiAdobephotoshop, SiAdobeillustrator } from 'react-icons/si';
 import { BiLogoTypescript } from 'react-icons/bi';
 import { IoLogoJavascript } from 'react-icons/io5';
 import { FiFramer } from 'react-icons/fi';
-import { ProjectType, SkillType } from '../@types/type';
+import { AiFillInstagram } from 'react-icons/ai';
+import { FaSquareGithub } from 'react-icons/fa6';
+import { MdAlternateEmail } from 'react-icons/md';
+import { LuGithub, LuInstagram } from 'react-icons/lu';
+import { ProjectType, SkillType, SocialMediaType } from '../@types/type';
 import calculator from '../assets/calculator.png';
 import pixelEditor from '../assets/pixel-editor.png';
 import todoList from '../assets/todo-list.png';
@@ -135,5 +139,28 @@ export const tools: SkillType[] = [
   {
     Icon: FaLinux,
     name: 'Linux',
+  },
+];
+
+export const socialMedia: SocialMediaType[] = [
+  {
+    name: 'LinkedIn',
+    url: 'https://linkedin.com/in/viniciusbuenoc',
+    Icon: FaLinkedinIn,
+  },
+  {
+    name: 'Instagram',
+    url: 'https://instagram.com/viniciusbuenoc',
+    Icon: LuInstagram,
+  },
+  {
+    name: 'GitHub',
+    url: 'https://github.com/Buenno01',
+    Icon: LuGithub,
+  },
+  {
+    name: 'E-mail',
+    url: 'mailto:buenov535@gmail.com',
+    Icon: MdAlternateEmail,
   },
 ];

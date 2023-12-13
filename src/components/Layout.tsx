@@ -4,6 +4,8 @@ import { MdOutlineMenu } from 'react-icons/md';
 import { IoClose } from 'react-icons/io5';
 import { GiMoonBats, GiSundial } from 'react-icons/gi';
 import { Header } from './Header';
+import { Footer } from './Footer';
+import { socialMedia } from '../util/mock';
 
 const links = [
   {
@@ -49,6 +51,21 @@ function Layout() {
       >
         <Outlet />
       </main>
+      <Footer.Root>
+        <Footer.Column>
+          <Footer.Title headline="Me encontre nas redes" />
+          <Footer.ListWrapper>
+            {
+              socialMedia.map((link, i) => (
+                <Footer.IconLinkElement
+                  key={ i }
+                  socialMedia={ link }
+                />
+              ))
+            }
+          </Footer.ListWrapper>
+        </Footer.Column>
+      </Footer.Root>
     </>
   );
 }
