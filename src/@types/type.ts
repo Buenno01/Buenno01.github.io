@@ -13,7 +13,7 @@ export type SkillType = {
   Icon: ElementType
 };
 
-export type SocialMediaType = {
+export type FooterLinkType = {
   name: string,
   url: string,
   Icon: ElementType,

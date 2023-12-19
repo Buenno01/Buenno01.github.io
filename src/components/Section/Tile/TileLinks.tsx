@@ -23,8 +23,8 @@ function TileLinks({ deployUrl, repoUrl }: TileLinksProps) {
         rel="noreferrer"
         className={ classes }
       >
-        <FaGithubAlt />
-        <span className="text-sm">Ver Repo</span>
+        <FaRocket />
+        <span className="text-sm">Ver Deploy</span>
       </a>
       <a
         target="_blank"
@@ -33,8 +33,8 @@ function TileLinks({ deployUrl, repoUrl }: TileLinksProps) {
         rel="noreferrer"
         className={ classes }
       >
-        <span className="text-sm">Ver Deploy</span>
-        <FaRocket />
+        <span className="text-sm">Ver Repo</span>
+        <FaGithubAlt />
       </a>
     </div>
   );

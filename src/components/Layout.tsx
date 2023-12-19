@@ -5,7 +5,7 @@ import { IoClose } from 'react-icons/io5';
 import { BsLightbulbOffFill, BsLightbulbFill } from 'react-icons/bs';
 import { Header } from './Header';
 import { Footer } from './Footer';
-import { socialMedia } from '../util/mock';
+import { courses, socialMedia } from '../util/mock';
 
 const links = [
   {
@@ -22,7 +22,7 @@ const links = [
   },
   {
     title: 'Habilidades',
-    internalHash: '#root',
+    internalHash: '#skills',
   },
 ];
 
@@ -59,9 +59,22 @@ function Layout() {
           <Footer.Title headline="Me encontre nas redes" />
           <Footer.ListWrapper>
             {
-              socialMedia.map((link, i) => (
+              socialMedia.map((link) => (
                 <Footer.IconLinkElement
-                  key={ i }
+                  key={ link.name }
+                  socialMedia={ link }
+                />
+              ))
+            }
+          </Footer.ListWrapper>
+        </Footer.Column>
+        <Footer.Column>
+          <Footer.Title headline="Cursos realizados" />
+          <Footer.ListWrapper>
+            {
+              courses.map((link) => (
+                <Footer.IconLinkElement
+                  key={ link.name }
                   socialMedia={ link }
                 />
               ))

@@ -1,7 +1,7 @@
-import { SocialMediaType } from '../../@types/type';
+import { FooterLinkType } from '../../@types/type';
 
 type FooterIconLinkElementProps = {
-  socialMedia: SocialMediaType,
+  socialMedia: FooterLinkType,
 };
 
 function FooterIconLinkElement({ socialMedia }: FooterIconLinkElementProps) {
