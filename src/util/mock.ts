@@ -164,7 +164,7 @@ export const tools: SkillType[] = [
 export const socialMedia: FooterLinkType[] = [
   {
     name: 'LinkedIn',
-    url: 'https://linkedin.com/in/viniciusbuenoc',
+    url: 'https://www.linkedin.com/in/viniciusbuenocosta/',
     Icon: FaLinkedinIn,
   },
   {
