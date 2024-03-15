@@ -1,7 +1,7 @@
-import { FooterLinkType } from '../../@types/type';
+import { SocialMediaType } from '../../@types/type';
 
 type FooterIconLinkElementProps = {
-  socialMedia: FooterLinkType,
+  socialMedia: SocialMediaType,
 };
 
 function FooterIconLinkElement({ socialMedia }: FooterIconLinkElementProps) {
@@ -10,11 +10,11 @@ function FooterIconLinkElement({ socialMedia }: FooterIconLinkElementProps) {
       <a
         className="flex gap-2 items-center"
         target="_blank"
-        href={ socialMedia.url }
+        href={ socialMedia.link }
         rel="noreferrer"
       >
         <span className="text-xl">
-          <socialMedia.Icon />
+          <socialMedia.icon />
         </span>
         {socialMedia.name}
       </a>
