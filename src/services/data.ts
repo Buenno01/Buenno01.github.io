@@ -17,6 +17,7 @@ import trybeTunes from '../assets/trybe-tunes.png';
 import { SiVitest } from "react-icons/si";
 import { TbBrandVite } from "react-icons/tb";
 import { FaBootstrap } from "react-icons/fa6";
+import { Data, ProjectType, SocialMediaType, StacksType } from '../@types/type';
 
 const getAge = () => {
     const birthDate = new Date('2000-03-31');
@@ -38,50 +39,6 @@ const techs = {
     react: 'React.js',
     ts: 'TypeScript',
     redux: 'Redux',
-};
-
-type StacksType = {
-    name: string,
-    icon: string,
-}
-
-type SocialMediaType = {
-    name: string,
-    link: string,
-    icon: string,
-};
-
-type CertificationType = {
-    name: string,
-    institution: string,
-    icon: string,
-    link: string,
-};
-
-type ProjectType = {
-    name: string,
-    description: string,
-    techs: string[],
-    deployLink: string,
-    repoLink: string,
-    image: string,
-};
-
-type Content = {
-    name: string,
-    role: string,
-    age: number,
-    techStacks: StacksType[],
-    otherStacks: StacksType[],
-    aboutMe: string[],
-    projects: ProjectType[],
-    socialMedia: SocialMediaType[],
-    certifications: CertificationType[],
-};
-
-type Data = {
-    EN: Content,
-    PT: Content,
 };
 
 const otherStacks: StacksType[] = [
