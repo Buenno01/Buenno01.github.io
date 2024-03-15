@@ -5,7 +5,7 @@ import { IoClose } from 'react-icons/io5';
 import { BsLightbulbOffFill, BsLightbulbFill } from 'react-icons/bs';
 import { Header } from './Header';
 import { Footer } from './Footer';
-import { courses, socialMedia } from '../util/mock';
+import data from '../services/data';
 
 const links = [
   {
@@ -28,6 +28,7 @@ const links = [
 
 function Layout() {
   const [menuIsVisible, setMenuIsVisible] = useState(false);
+  const [actualData] = useState(data.PT);
 
   return (
     <>
@@ -59,10 +60,10 @@ function Layout() {
           <Footer.Title headline="Me encontre nas redes" />
           <Footer.ListWrapper>
             {
-              socialMedia.map((link) => (
+              actualData.socialMedia.map((socialMedia) => (
                 <Footer.IconLinkElement
-                  key={ link.name }
-                  socialMedia={ link }
+                  key={ socialMedia.name }
+                  socialMedia={ socialMedia }
                 />
               ))
             }
@@ -72,10 +73,10 @@ function Layout() {
           <Footer.Title headline="Cursos realizados" />
           <Footer.ListWrapper>
             {
-              courses.map((link) => (
+              actualData.certifications.map((certification) => (
                 <Footer.IconLinkElement
-                  key={ link.name }
-                  socialMedia={ link }
+                  key={ certification.name }
+                  socialMedia={ certification }
                 />
               ))
             }

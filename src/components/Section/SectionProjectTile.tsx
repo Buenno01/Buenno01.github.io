@@ -43,7 +43,7 @@ function SectionProjectTile({ project, id, isOnId, setIsOnId }: SectionProjectTi
     >
       <motion.img
         className="absolute left-0 right-0 top-0"
-        src={ project.imgUrl }
+        src={ project.image }
         animate={ {
           opacity: isOn ? 0.2 : 1,
         } }
@@ -56,11 +56,14 @@ function SectionProjectTile({ project, id, isOnId, setIsOnId }: SectionProjectTi
           opacity: isOn ? 1 : 0,
         } }
       >
-        <Tile.Links { ... project } />
+        <Tile.Links 
+          deployUrl={ project.deployLink }
+          repoUrl={ project.repoLink }
+        />
         <h3 className="text-2xl font-medium uppercase">
           {project.name}
         </h3>
-        <Tile.TechList techList={ project.techList } />
+        <Tile.TechList techList={ project.techs.slice(0, 3) } />
       </motion.div>
     </motion.div>
   );
