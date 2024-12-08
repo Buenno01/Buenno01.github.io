@@ -12,6 +12,9 @@ export default {
       reverse: 'reverse~="true"',
     },
     extend: {
+      screens: {
+        xs: '475px',
+      },
       colors: {
         foreground: {
           DEFAULT: '#FFFFFF',
@@ -32,7 +35,7 @@ export default {
           DEFAULT: '#FF5555',
         },
         cyan: {
-          DEFAULT: '#8BE9FD',
+          DEFAULT: '#7bccef',
         },
       },
       flexGrow: {
