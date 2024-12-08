@@ -24,8 +24,6 @@ function Header() {
       </div>
 
       <HeaderMenu />
-
-
     </header>
   );
 }
