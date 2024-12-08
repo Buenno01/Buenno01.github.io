@@ -35,7 +35,7 @@ function HeaderMenu() {
         onClick={ toggleMenu } 
         className={`flex justify-end md:hidden
           ${active ? "after:content-['']" : "after:content-[none]"}
-          after:content-[''] after:fixed after:top-0 after:right-0 after:bottom-0 after:left-0 after:bg-black after:opacity-25 after:z-10
+          after:content-[''] after:fixed after:top-0 after:right-0 after:h-screen after:left-0 after:bg-black after:opacity-25 after:z-10
         `}
       >
         <FiMenu className='h-full w-auto' />
