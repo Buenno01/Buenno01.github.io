@@ -50,6 +50,7 @@ function HeaderMenu() {
           bg-background p-4
           h-screen w-full
           xs:max-w-xs
+          md:bg-transparent
           md:h-auto md:shadow-none
           md:static md:translate-x-0
           md:justify-center md:p-0 md:max-w-none md:w-auto

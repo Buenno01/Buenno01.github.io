@@ -9,6 +9,7 @@ function Header() {
         fixed top-0 w-full p-4 grid grid-cols-2 text-foreground
         shadow-md
         backdrop-blur-sm
+        z-50
         md:grid-cols-3 md:px-8
       '
     >

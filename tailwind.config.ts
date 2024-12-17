@@ -20,7 +20,9 @@ export default {
           DEFAULT: '#FFFFFF',
         },
         background: {
-          DEFAULT: '#282A36',
+          DEFAULT: '#16171d',
+          900: '#16171d',
+          300: '#282A36',
         },
         background2: {
           DEFAULT: '#44475A',
@@ -37,6 +39,12 @@ export default {
         cyan: {
           DEFAULT: '#7bccef',
         },
+      },
+      transitionProperty: {
+        'mask': 'mask-size',
+      },
+      height: {
+        'screen-2': '200vh',
       },
       flexGrow: {
         2: '2',
