@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import Header from "./components/Header";
-import AnimatedBanner from "./components/AnimatedBanner";
+import AnimatedBanner2 from "./components/AnimatedBanner2";
 import { useEffect } from "react";
 
 export default function Home() {
@@ -19,7 +19,7 @@ export default function Home() {
       <Header />
 
       <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <AnimatedBanner />
+        <AnimatedBanner2 />
       </main>
 
       <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">

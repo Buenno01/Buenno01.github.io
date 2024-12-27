@@ -1,26 +1,17 @@
 'use client';
 
-import { motion, useMotionValueEvent, useScroll } from 'motion/react';
-import { useRef, useState } from 'react';
+import { motion, MotionValue, useMotionValueEvent } from 'motion/react';
+import { useState } from 'react';
 import Image from 'next/image';
 
 type AnimatedBannerSlideProps = {
   image: { src: string, alt: string },
   index: number,
-  isLast: boolean
+  isLast: boolean,
+  scrollYProgress: MotionValue<number>,
 };
 
-export default function AnimatedBannerSlide({ image, index, isLast }: AnimatedBannerSlideProps) {
-  const ref = useRef<HTMLLIElement>(null);
-  const { scrollYProgress } = useScroll({
-    target: ref,
-    axis: "y",
-    offset: [
-      "0 1",
-      "1 1"
-    ]
-  });
-
+export default function AnimatedBannerSlide({ image, index, isLast, scrollYProgress }: AnimatedBannerSlideProps) {
   const [maskSize, setMaskSize] = useState(0);
   const [linearBackground, setLinearBackground] = useState(false);
 
@@ -35,7 +26,6 @@ export default function AnimatedBannerSlide({ image, index, isLast }: AnimatedBa
 
   return (
     <li
-      ref={ ref }
       key={ 'animated-banner-' + image.src }
       className={ `h-screen w-screen` }
     >
