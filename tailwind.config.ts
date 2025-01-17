@@ -20,8 +20,9 @@ export default {
           DEFAULT: '#FFFFFF',
         },
         background: {
-          DEFAULT: '#16171d',
-          900: '#16171d',
+          DEFAULT: '#0c0c0c',
+          900: '#0c0c0c',
+          700: '#16171d',
           300: '#282A36',
         },
         background2: {
