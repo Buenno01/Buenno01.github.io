@@ -15,6 +15,9 @@ export default {
       screens: {
         xs: '475px',
       },
+      content: {
+        'none': 'none',
+      },
       colors: {
         foreground: {
           DEFAULT: '#FFFFFF',
@@ -23,6 +26,7 @@ export default {
           DEFAULT: '#0c0c0c',
           900: '#0c0c0c',
           700: '#16171d',
+          500: '#1f2029',
           300: '#282A36',
         },
         background2: {
