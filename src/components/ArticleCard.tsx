@@ -1,13 +1,11 @@
 import React from 'react';
 import Image from 'next/image';
+import StackItem from './ui/StackItem';
+import { Project } from '@/@types/Project';
 
-function ArticleCard() {
-  const { title, content, stacks, image } = {
-    title: 'Facilisi ultricies',
-    content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ac libero ac nunc ultricies ultricies. Nulla facilisi. Nullam ut est nec fel',
-    stacks: ['React', 'Next.js', 'TailwindCSS'],
-    image: '/banner1.jpg',
-  }
+type ArticleCardProps = Project;
+
+function ArticleCard({ title, description, stacks, image }: ArticleCardProps) {
   return (
     <div className='group'>
       <div className='p-4 h-fit bg-background-500 rounded-lg relative z-10'>
@@ -20,26 +18,20 @@ function ArticleCard() {
           </summary>
           <div>
             <p>
-              { content }
+              { description }
             </p>
           </div>
         </details>
       </div>
       {
         stacks.length > 0 && (
-        <ul className='overflow-hidden gap-1 w-full flex translate-y-[-100%] group-hover:translate-y-0 transition-transform justify-center'>
+        <ul className='max-w-full flex-wrap overflow-hidden gap-x-1 w-full flex translate-y-[-100%] group-hover:translate-y-0 transition-transform justify-center'>
           {
             stacks.map((stack, index) => (
-              <li
+              <StackItem 
                 key={ index }
-                className='group/stack inline-flex overflow-hidden text-xs bg-blue-900 text-foreground font-bold px-4 py-1 rounded-b-lg'
-              >
-                <Image className='group-hover/stack:mr-1' src="vercel.svg" width={10} height={10} alt='Icone'></Image>
-                <span
-                className='w-0 group-hover/stack:w-auto overflow-hidden'>
-                  { stack }
-                </span>
-              </li>
+                { ...stack }
+              />
             ))
           }
         </ul>
