@@ -17,7 +17,7 @@ function StackItem({ name, IconKey, backgroundColor = 'rgb(30, 58, 138)', textCo
     <li
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
-      className='group/stack inline-flex justify-center items-center overflow-hidden text-xs px-4 py-1 rounded-b-lg'
+      className='cursor-default group/stack inline-flex justify-center items-center overflow-hidden text-xs px-2 py-1 rounded-b-lg'
       style={{ backgroundColor, color: textColor }}
     >
       <Icon IconKey={ IconKey } className='text-md group-hover/stack:mr-1 transition-all duration-100' />
