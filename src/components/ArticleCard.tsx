@@ -1,6 +1,6 @@
 import React from 'react';
 import Image from 'next/image';
-import StackItem from './ui/StackItem';
+import IconItem from './ui/IconItem';
 import { Project } from '@/@types/Project';
 import CardWrapper from './ui/CardWrapper';
 import HoverParallax from './ui/HoverParallax';
@@ -13,7 +13,7 @@ function ArticleCard({ title, description, stacks, image }: ArticleCardProps) {
     <div className='group'>
       <HoverParallax>
         <CardWrapper>
-          <Image className='w-full h-auto aspect-video object-cover' src={ image } alt='asdthvw' width={ 500 } height={ 500 } ></Image>
+          <Image className='w-full h-auto aspect-video object-cover' src={ image } alt={ title } width={ 500 } height={ 500 } ></Image>
           <div className='text-xs pt-2 sm:text-sm lg:text-md text-foreground'>
             <h3 className='text-lg sm:text-xl lg:text-2xl font-bold text-foreground'>
               { title }
@@ -29,7 +29,7 @@ function ArticleCard({ title, description, stacks, image }: ArticleCardProps) {
         <ul className='max-w-full flex-wrap overflow-hidden py-1 gap-x-1 w-full flex justify-center'>
           {
             stacks.map((stack, index) => (
-              <StackItem 
+              <IconItem 
                 key={ index }
                 { ...stack }
               />
