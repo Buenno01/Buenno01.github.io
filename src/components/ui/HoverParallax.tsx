@@ -12,10 +12,10 @@ type HoverParallaxProps = {
 function HoverParallax({ children, ...rest }: HoverParallaxProps) {
     const relativeX = useMotionValue(0);
     const relativeY = useMotionValue(0);
-    const rotateX = useTransform(relativeY, [-1, 1], [10, -10]); // Reversed values
-    const rotateY = useTransform(relativeX, [-1, 1], [-10, 10]); // Reversed values
+    const rotateX = useTransform(relativeY, [-1, 1], [10, -10]);
+    const rotateY = useTransform(relativeX, [-1, 1], [-10, 10]);
 
-    const rotateLight = useTransform(relativeY, [-1, 1], [30, 70]); // Reversed values
+    const rotateLight = useTransform(relativeY, [-1, 1], [30, 70]);
 
     const ref = useRef<HTMLDivElement>(null);
   
@@ -66,8 +66,8 @@ function HoverParallax({ children, ...rest }: HoverParallaxProps) {
             rotate: rotateLight,
             translateX: '-50%',
             translateY: '-50%',
-            pointerEvents: 'none', // Reflexo não interfere nos eventos do mouse
-            zIndex: 10, // Certifique-se de que o reflexo esteja acima do conteúdo
+            pointerEvents: 'none',
+            zIndex: 10,
           }}
         />
       </motion.div>
