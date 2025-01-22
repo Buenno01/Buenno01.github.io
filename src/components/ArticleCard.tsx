@@ -4,6 +4,7 @@ import StackItem from './ui/StackItem';
 import { Project } from '@/@types/Project';
 import CardWrapper from './ui/CardWrapper';
 import HoverParallax from './ui/HoverParallax';
+import Paragraph from './ui/Paragraph';
 
 type ArticleCardProps = Project;
 
@@ -17,9 +18,9 @@ function ArticleCard({ title, description, stacks, image }: ArticleCardProps) {
             <h3 className='text-lg sm:text-xl lg:text-2xl font-bold text-foreground'>
               { title }
             </h3>
-            <p className='font-light mt-1'>
+            <Paragraph>
               { description }
-            </p>
+            </Paragraph>
           </div>
         </CardWrapper>
       </HoverParallax>
