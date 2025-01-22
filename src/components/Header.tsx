@@ -1,6 +1,6 @@
 import React from 'react';
-import Image from 'next/image';
 import HeaderMenu from './HeaderMenu';
+import Logo from './ui/Logo';
 
 function Header() {
   return (
@@ -14,14 +14,9 @@ function Header() {
       '
     >
       <div className='flex w-full justify-start'>
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={130}
-          height={38}
-          priority
-        />
+        <p className='flex items-center'>
+          <Logo className='w-32 xs:w-36 sm:w-40 md:w-44 h-auto'></Logo>
+        </p>
       </div>
 
       <HeaderMenu />
