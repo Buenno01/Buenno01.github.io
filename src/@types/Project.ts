@@ -1,9 +1,11 @@
-import { Stack } from "./Stack";
+import { IconItemType } from "./IconItem";
+import { IconLinkType } from "./IconLink";
 
 export type Project = {
   title: string;
   description: string;
   image: string;
-  stacks: Stack[];
+  stacks: IconItemType[];
   content: string;
+  links: IconLinkType[]
 }

@@ -1,4 +1,4 @@
-import { Stack } from "@/@types/Stack";
+import { Stack } from "@/@types/IconItem";
 
 type StackData = {
   [key: string]: Stack;

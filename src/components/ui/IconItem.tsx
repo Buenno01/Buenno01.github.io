@@ -1,19 +1,14 @@
 import { motion } from 'motion/react';
 import React, { ComponentProps } from 'react';
-import { Stack } from '@/@types/Stack';
+import { IconItemType } from '@/@types/IconItem';
 import Icon from './Icon';
 import { twMerge } from 'tailwind-merge';
 
-type ColorSettings = {
-  backgroundColor?: string;
-  textColor?: string;
-}
-
 type LiProps = ComponentProps<'li'>;
 
-type IconItemProps = Stack & ColorSettings & LiProps;
+type IconItemProps = IconItemType  & LiProps;
 
-function IconItem({ name, IconKey, backgroundColor = 'rgb(30, 58, 138)', textColor = 'rbg(255, 255, 255)', ...rest }: IconItemProps) {
+function IconItem({ name, iconKey, backgroundColor = 'rgb(30, 58, 138)', textColor = 'rbg(255, 255, 255)', ...rest }: IconItemProps) {
   const [isHovered, setIsHovered] = React.useState(false);
 
   return (
@@ -24,7 +19,7 @@ function IconItem({ name, IconKey, backgroundColor = 'rgb(30, 58, 138)', textCol
       className={ twMerge('cursor-default group/stack inline-flex justify-center items-center overflow-hidden text-xs px-2 py-1 rounded-lg lg:translate-y-[-125%] group-hover:translate-y-0 transition-transform', rest.className) }
       style={{ backgroundColor, color: textColor }}
     >
-      <Icon IconKey={ IconKey } className='text-md group-hover/stack:mr-1 transition-all duration-100' />
+      <Icon iconKey={ iconKey } className='text-md group-hover/stack:mr-1 transition-all duration-100' />
       <motion.span
         variants={{
           hidden: { width: 0 },

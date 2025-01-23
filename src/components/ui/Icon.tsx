@@ -8,7 +8,7 @@ import { BiLogoTypescript } from "react-icons/bi";
 type SvgProps = ComponentProps<"svg">;
 
 type IconProps = {
-  IconKey: Icons | string;
+  iconKey: Icons | string;
 } & SvgProps;
 
 type IconMapper = {
@@ -20,7 +20,7 @@ type IconMapper = {
 
 type Icons = keyof IconMapper;
 
-function Icon({ IconKey, ...rest }: IconProps) {
+function Icon({ iconKey, ...rest }: IconProps) {
   const mapper = {
     'react-js': <FaReact  { ...rest } />,
     'tailwindcss': <RiTailwindCssFill  { ...rest } />,
@@ -28,7 +28,7 @@ function Icon({ IconKey, ...rest }: IconProps) {
     'typescript': <BiLogoTypescript  { ...rest } />,
   }
 
-  return mapper[IconKey as Icons] || <TbPlugConnectedX  { ...rest } />;
+  return mapper[iconKey as Icons] || <TbPlugConnectedX  { ...rest } />;
 }
 
 export default Icon;

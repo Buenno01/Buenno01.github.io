@@ -1,6 +1,6 @@
-export type Stack = {
+export type IconItemType = {
   name: string;
-  IconKey: string;
+  iconKey: string;
   backgroundColor: string;
   textColor: string;
 }
