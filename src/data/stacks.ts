@@ -1,31 +1,31 @@
-import { Stack } from "@/@types/IconItem";
+import { IconItemType } from "@/@types/IconItem";
 
 type StackData = {
-  [key: string]: Stack;
+  [key: string]: IconItemType;
 }
 
 const stacks: StackData = {
   react: {
     name: 'React',
-    IconKey: 'react-js',
+    iconKey: 'react-js',
     backgroundColor: '#23272f',
     textColor: '#61DBFB',
   },
   next: {
     name: 'Next.js',
-    IconKey: 'next-js',
+    iconKey: 'next-js',
     backgroundColor: '#000000',
     textColor: '#fff',
   },
   tailwind: {
     name: 'TailwindCSS',
-    IconKey: 'tailwindcss',
+    iconKey: 'tailwindcss',
     backgroundColor: '#0f172a',
     textColor: '#a5f3fc',
   },
   typescript: {
     name: 'TypeScript',
-    IconKey: 'typescript',
+    iconKey: 'typescript',
     backgroundColor: '#007acc',
     textColor: '#fff',
   }
