@@ -38,10 +38,13 @@ function IconItem({ name, iconKey, backgroundColor = 'rgb(30, 58, 138)', textCol
       { ...rest }
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
-      className={ twMerge('cursor-default group/stack inline-flex justify-center items-center overflow-hidden text-xs px-2 py-1 rounded-lg lg:translate-y-[-125%] group-hover:translate-y-0 transition-transform', rest.className) }
+      className={ twMerge('cursor-default relative inline-flex justify-center items-center overflow-hidden text-xs px-2 py-1 rounded-lg lg:translate-y-[-125%] group-hover:translate-y-0 transition-transform', rest.className) }
       style={{ backgroundColor, color: textColor }}
     >
       <Icon iconKey={ iconKey } className='text-md transition-all duration-100' />
+      {
+        url && <a href={ url } target='_blank' referrerPolicy='no-referrer' className='absolute w-full h-full top-0 left-0 text-transparent'>Link</a>
+      }
       <motion.span
         variants={ variants }
         initial='hidden'
