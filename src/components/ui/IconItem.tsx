@@ -16,7 +16,7 @@ function IconItem({ name, iconKey, backgroundColor = 'rgb(30, 58, 138)', textCol
   const variants = url ? {
     hidden: {
       width: 'var(--icon-item-hidden)',
-      marginLeft: '0.25rem',
+      marginLeft: 'var(--icon-item-hidden-margin-left)',
     },
     visible: {
       width: 'var(--icon-item-visible)',

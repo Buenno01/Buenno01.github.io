@@ -22,12 +22,14 @@
   :root {
     --icon-item-hidden: auto;
     --icon-item-visible: auto;
+    --icon-item-hidden-margin-left: 0.25rem;
   }
 
   @media screen and (min-width: 1024px) {
     :root {
       --icon-item-hidden: 0;
       --icon-item-visible: auto;
+      --icon-item-hidden-margin-left: 0rem;
     }
   }
 }
