@@ -8,9 +8,24 @@ import Paragraph from './ui/Paragraph';
 
 type ArticleCardProps = Project;
 
-function ArticleCard({ title, description, stacks, image }: ArticleCardProps) {
+function ArticleCard({ title, description, stacks, image, links }: ArticleCardProps) {
   return (
     <div className='group'>
+      {
+        links.length > 0 && (
+        <ul className='max-w-full flex-wrap overflow-hidden py-1 gap-x-1 w-full flex justify-center'>
+          {
+            links.map((link, index) => (
+              <IconItem 
+                key={ index }
+                className='lg:translate-y-[125%] group-hover:translate-y-0 md:text-md'
+                { ...link }
+              />
+            ))
+          }
+        </ul>
+        )
+      }
       <HoverParallax>
         <CardWrapper>
           <Image className='w-full h-auto aspect-video object-cover' src={ image } alt={ title } width={ 500 } height={ 500 } ></Image>

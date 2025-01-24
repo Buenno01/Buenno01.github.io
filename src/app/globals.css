@@ -18,6 +18,20 @@
   }
 }
 
+@layer base {
+  :root {
+    --icon-item-hidden: auto;
+    --icon-item-visible: auto;
+  }
+
+  @media screen and (min-width: 1024px) {
+    :root {
+      --icon-item-hidden: 0;
+      --icon-item-visible: auto;
+    }
+  }
+}
+
 @keyframes noise-anim {
   0%, 20%, 53%{
     text-shadow: 0.8px 0.8px 0px #0ffbf9, -0.8px -0.8px 0px #cc0f39;

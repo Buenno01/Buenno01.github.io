@@ -6,10 +6,32 @@ import { twMerge } from 'tailwind-merge';
 
 type LiProps = ComponentProps<'li'>;
 
-type IconItemProps = IconItemType  & LiProps;
+type IconItemProps = IconItemType & LiProps & {
+  url?: string | null;
+};
 
-function IconItem({ name, iconKey, backgroundColor = 'rgb(30, 58, 138)', textColor = 'rbg(255, 255, 255)', ...rest }: IconItemProps) {
+function IconItem({ name, iconKey, backgroundColor = 'rgb(30, 58, 138)', textColor = 'rbg(255, 255, 255)', url = null, ...rest }: IconItemProps) {
   const [isHovered, setIsHovered] = React.useState(false);
+
+  const variants = url ? {
+    hidden: {
+      width: 'var(--icon-item-hidden)',
+      marginLeft: '0.25rem',
+    },
+    visible: {
+      width: 'var(--icon-item-visible)',
+      marginLeft: '0.25rem',
+    },
+  } : {
+    hidden: {
+      width: 0,
+      marginLeft: 0,
+    },
+    visible: {
+      width: 'var(--icon-item-visible)',
+      marginLeft: '0.25rem',
+    },
+  }
 
   return (
     <li
@@ -19,12 +41,9 @@ function IconItem({ name, iconKey, backgroundColor = 'rgb(30, 58, 138)', textCol
       className={ twMerge('cursor-default group/stack inline-flex justify-center items-center overflow-hidden text-xs px-2 py-1 rounded-lg lg:translate-y-[-125%] group-hover:translate-y-0 transition-transform', rest.className) }
       style={{ backgroundColor, color: textColor }}
     >
-      <Icon iconKey={ iconKey } className='text-md group-hover/stack:mr-1 transition-all duration-100' />
+      <Icon iconKey={ iconKey } className='text-md transition-all duration-100' />
       <motion.span
-        variants={{
-          hidden: { width: 0 },
-          visible: { width: 'auto' },
-        }}
+        variants={ variants }
         initial='hidden'
         animate={isHovered ? 'visible' : 'hidden'}
         className='w-0 overflow-hidden'
