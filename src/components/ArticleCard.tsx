@@ -43,7 +43,7 @@ function ArticleCard({ title, description, stacks, image, links }: ArticleCardPr
         stacks.length > 0 && (
         <ul className='max-w-full flex-wrap overflow-hidden py-1 gap-x-1 w-full flex justify-center'>
           {
-            stacks.map((stack, index) => (
+            stacks.slice(0, 3).map((stack, index) => (
               <IconItem 
                 key={ index }
                 { ...stack }

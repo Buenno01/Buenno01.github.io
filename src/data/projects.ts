@@ -6,7 +6,7 @@ const projects: Project[] = [
     title: 'Project 1',
     description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ac libero ac nunc ultricies ultricies. Nulla facilisi. Nullam ut est nec fel',
     image: '/banner1.jpg',
-    stacks: [stacks.react, stacks.next, stacks.tailwind, stacks.typescript],
+    stacks: [stacks.react, stacks.liquid, stacks.typescript],
     content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ac libero ac nunc ultricies ultricies. Nulla facilisi. Nullam ut est nec fel',
     links: [
       {
@@ -36,7 +36,7 @@ const projects: Project[] = [
     title: 'Project 2',
     description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ac libero ac nunc ultricies ultricies. Nulla facilisi. Nullam ut est nec fel',
     image: '/banner2.jpg',
-    stacks: [stacks.react, stacks.next, stacks.tailwind, stacks.typescript],
+    stacks: [stacks.nodejs, stacks.mysql, stacks.typescript],
     content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ac libero ac nunc ultricies ultricies. Nulla facilisi. Nullam ut est nec fel',
     links: [
       {

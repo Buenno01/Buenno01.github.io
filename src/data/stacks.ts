@@ -28,6 +28,24 @@ const stacks: StackData = {
     iconKey: 'typescript',
     backgroundColor: '#007acc',
     textColor: '#fff',
+  },
+  liquid: {
+    name: 'Liquid',
+    iconKey: 'liquid',
+    backgroundColor: '#95bf47',
+    textColor: '#fff',
+  },
+  mysql: {
+    name: 'MySQL',
+    iconKey: 'mysql',
+    backgroundColor: '#00758f',
+    textColor: '#fff',
+  },
+  nodejs: {
+    name: 'Node.js',
+    iconKey: 'nodejs',
+    backgroundColor: '#3c873a',
+    textColor: '#fff',
   }
 }
 
