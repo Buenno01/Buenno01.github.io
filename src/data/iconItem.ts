@@ -4,7 +4,7 @@ type StackData = {
   [key: string]: IconItemType;
 }
 
-const stacks: StackData = {
+const iconItem: StackData = {
   react: {
     name: 'React',
     iconKey: 'react-js',
@@ -46,7 +46,25 @@ const stacks: StackData = {
     iconKey: 'nodejs',
     backgroundColor: '#3c873a',
     textColor: '#fff',
+  },
+  github: {
+    name: 'Github',
+    iconKey: 'github',
+    backgroundColor: 'rgb(0, 0, 0)',
+    textColor: 'rgb(255, 255, 255)',
+  },
+  globe: {
+    name: 'Demo',
+    iconKey: 'globe',
+    backgroundColor: 'rgb(30, 58, 138)',
+    textColor: 'rgb(255, 255, 255)',
+  },
+  document: {
+    name: 'Article',
+    iconKey: 'document',
+    backgroundColor: 'rgb(255, 255, 255)',
+    textColor: 'rgb(0, 0, 0)',
   }
 }
 
-export default stacks;
+export default iconItem;
