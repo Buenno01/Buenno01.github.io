@@ -1,3 +1,5 @@
+'use client';
+
 import { motion } from 'motion/react';
 import React, { ComponentProps } from 'react';
 import { IconItemType } from '@/@types/IconItem';

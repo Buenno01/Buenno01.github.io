@@ -5,9 +5,9 @@ import { Project } from '@/@types/Project';
 import CardWrapper from './ui/CardWrapper';
 import HoverParallax from './ui/HoverParallax';
 
-type ArticleCardProps = Project;
+type ProjectCardProps = Project;
 
-function ArticleCard({ title, description, stacks, image, links }: ArticleCardProps) {
+function ProjectCard({ title, description, stacks, image, links }: ProjectCardProps) {
   return (
     <div className='group'>
       {
@@ -56,4 +56,4 @@ function ArticleCard({ title, description, stacks, image, links }: ArticleCardPr
   )
 }
 
-export default ArticleCard
+export default ProjectCard
