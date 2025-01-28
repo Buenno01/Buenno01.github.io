@@ -1,6 +1,6 @@
 'use client';
 
-import LocomotiveScroll from "../components/LocomotiveScroll";
+import LocomotiveScroll from "@/components/LocomotiveScroll";
 import ArticleCard from "@/components/ArticleCard";
 import FadeInWrapper from "@/components/ui/FadeInWrapper";
 import projects from "@/data/projects";
