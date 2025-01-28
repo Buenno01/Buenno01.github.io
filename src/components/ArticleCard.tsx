@@ -29,7 +29,7 @@ function ArticleCard({ title, description, stacks, image, links }: ArticleCardPr
         <CardWrapper>
           <Image className='w-full h-auto aspect-video object-cover' src={ image } alt={ title } width={ 500 } height={ 500 } ></Image>
           <div className='text-xs pt-2 sm:text-sm lg:text-md text-foreground'>
-            <h3 className='text-lg sm:text-xl lg:text-2xl font-bold text-foreground'>
+            <h3>
               { title }
             </h3>
             <p>

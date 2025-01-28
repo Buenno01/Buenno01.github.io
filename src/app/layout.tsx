@@ -15,10 +15,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`antialiased bg-background text-foreground overflow-x-hidden relative`}
+        className="antialiased"
       >
         <Header />
-        <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start min-h-screen">
+        <main className="min-h-screen">
           {children}
         </main>
         <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">

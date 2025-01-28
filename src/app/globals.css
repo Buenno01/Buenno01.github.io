@@ -32,6 +32,18 @@
       --icon-item-hidden-margin-left: 0rem;
     }
   }
+
+  body {
+    @apply bg-background text-foreground
+  }
+
+  p {
+    @apply mt-1 font-light;
+  }
+
+  h3 {
+    @apply text-lg sm:text-xl lg:text-2xl font-bold;
+  }
 }
 
 @keyframes noise-anim {
