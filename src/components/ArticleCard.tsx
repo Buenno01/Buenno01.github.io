@@ -4,7 +4,6 @@ import IconItem from './ui/IconItem';
 import { Project } from '@/@types/Project';
 import CardWrapper from './ui/CardWrapper';
 import HoverParallax from './ui/HoverParallax';
-import Paragraph from './ui/Paragraph';
 
 type ArticleCardProps = Project;
 
@@ -13,7 +12,7 @@ function ArticleCard({ title, description, stacks, image, links }: ArticleCardPr
     <div className='group'>
       {
         links.length > 0 && (
-        <ul className='max-w-full flex-wrap overflow-hidden py-1 gap-x-1 w-full flex justify-center'>
+        <nav className='max-w-full flex-wrap overflow-hidden py-1 gap-x-1 w-full flex justify-center'>
           {
             links.map((link, index) => (
               <IconItem 
@@ -23,7 +22,7 @@ function ArticleCard({ title, description, stacks, image, links }: ArticleCardPr
               />
             ))
           }
-        </ul>
+        </nav>
         )
       }
       <HoverParallax>
@@ -33,9 +32,9 @@ function ArticleCard({ title, description, stacks, image, links }: ArticleCardPr
             <h3 className='text-lg sm:text-xl lg:text-2xl font-bold text-foreground'>
               { title }
             </h3>
-            <Paragraph>
+            <p>
               { description }
-            </Paragraph>
+            </p>
           </div>
         </CardWrapper>
       </HoverParallax>
