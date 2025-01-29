@@ -5,12 +5,19 @@ import React from 'react';
 
 function ProjectGrid() {
   return (
-    <FadeInWrapper className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 w-11/12 mx-auto my-36">
-      {
-        projects.map((project, index) => (
-          <ProjectCard key={ index } { ...project } />
-        ))
-      }
+    <FadeInWrapper>
+      <h2 className='section-title-container container-lg'>
+        Projects
+      </h2>
+      <ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 container-lg">
+        {
+          projects.slice(0, 4).map((project, index) => (
+            <li key={ 'project-' + index }>
+              <ProjectCard  { ...project } />
+            </li>
+          ))
+        }
+      </ul>
     </FadeInWrapper>
   );
 }

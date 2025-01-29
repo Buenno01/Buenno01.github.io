@@ -51,6 +51,7 @@ export default {
       },
       height: {
         'screen-2': '200vh',
+        '1px': '1px',
       },
       flexGrow: {
         2: '2',
