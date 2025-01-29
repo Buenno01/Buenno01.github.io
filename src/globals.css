@@ -35,6 +35,13 @@
     animation: loading-bg 3s infinite ease;
   }
 
+  .mask {
+    -webkit-mask-image: url('/vercel.svg');
+    mask-image: url('/vercel.svg');
+    mask-repeat: no-repeat;
+    mask-position: bottom;
+  }
+
   img {
     @apply loading-bg;
   }
@@ -117,12 +124,5 @@
     opacity: 0.5;
     animation: noise-anim 7s infinite linear alternate-reverse;
   }
-}
-
-.mask {
-  -webkit-mask-image: url('/vercel.svg');
-  mask-image: url('/vercel.svg');
-  mask-repeat: no-repeat;
-  mask-position: bottom;
 }
 */
