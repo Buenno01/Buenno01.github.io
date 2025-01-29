@@ -56,6 +56,15 @@ export default {
       flexGrow: {
         2: '2',
       },
+      animation: {
+        'loading-bg': 'loading-bg 3s infinite ease',
+      },
+      backgroundSize: {
+        'x2': '200% 200%',
+      },
+      gradientColorStops: {
+        'loading-bg': 'rgba(255, 255, 255, 0) 45%, rgba(255, 255, 255, 0.02) 55%, rgba(255, 255, 255, 0)',
+      }
     },
   },
   plugins: [],

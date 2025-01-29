@@ -5,7 +5,7 @@ import Logo from './ui/Logo';
 function Header() {
   return (
     <header
-      className='header'
+      className='header active:bg-gradient-to-b from-background-900/50 to-transparent'
     >
       <div className='flex w-full justify-start'>
         <p className='flex items-center mt-0'>

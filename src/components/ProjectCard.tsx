@@ -27,7 +27,7 @@ function ProjectCard({ title, description, stacks, image, links }: ProjectCardPr
       }
       <HoverParallax>
         <CardWrapper>
-          <Image className='w-full h-auto aspect-video object-cover' src={ image } alt={ title } width={ 500 } height={ 500 } ></Image>
+          <Image className='w-full h-auto aspect-video object-cover loading-bg' src={ image }  alt={ title } width={ 320 } height={ 180 } />
           <div className='text-xs pt-2 sm:text-sm lg:text-md text-foreground'>
             <h3>
               { title }

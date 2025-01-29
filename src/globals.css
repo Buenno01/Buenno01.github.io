@@ -3,6 +3,18 @@
 @tailwind utilities;
 
 @layer base {
+  @keyframes loading-bg {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+
   :root {
     --icon-item-hidden: auto;
     --icon-item-visible: auto;
@@ -17,24 +29,6 @@
     }
   }
 
-  @keyframes loading-bg {
-    0% {
-      background-position: 0% 50%;
-    }
-    50% {
-      background-position: 100% 50%;
-    }
-    100% {
-      background-position: 0% 50%;
-    }
-  }
-
-  .loading-bg {
-    background: linear-gradient(270deg, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.06), rgba(255, 255, 255, 0));
-    background-size: 200% 200%;
-    animation: loading-bg 3s infinite ease;
-  }
-
   .mask {
     -webkit-mask-image: url('/vercel.svg');
     mask-image: url('/vercel.svg');
@@ -42,9 +36,9 @@
     mask-position: bottom;
   }
 
-  img {
-    @apply loading-bg;
-  }
+  /* img {
+    @apply animate-loading-bg;
+  } */
 
   body {
     @apply bg-background text-foreground overflow-x-hidden w-screen;
@@ -72,6 +66,10 @@
 
   h4 {
     @apply text-base sm:text-lg lg:text-xl;
+  }
+
+  .loading-bg {
+    @apply animate-loading-bg from-loading-bg bg-x2 bg-gradient-to-r
   }
 
   .container-lg {
