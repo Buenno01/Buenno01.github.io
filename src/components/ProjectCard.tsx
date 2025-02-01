@@ -12,30 +12,32 @@ function ProjectCard({ title, description, stacks, image, links }: ProjectCardPr
     <div className='group'>
       {
         links.length > 0 && (
-        <nav className='max-w-full flex-wrap overflow-hidden py-1 gap-x-1 w-full flex justify-center'>
-          {
-            links.map((link, index) => (
-              <IconItem 
-                key={ index }
-                className='lg:translate-y-[125%] group-hover:translate-y-0 md:text-md'
-                { ...link }
-              />
-            ))
-          }
+        <nav>
+          <ul className='max-w-full flex-wrap overflow-hidden py-1 gap-x-1 w-full flex justify-center'>
+            {
+              links.map((link, index) => (
+                <IconItem 
+                  key={ index }
+                  className='lg:translate-y-[125%] group-hover:translate-y-0 md:text-md'
+                  { ...link }
+                />
+              ))
+            }
+          </ul>
         </nav>
         )
       }
       <HoverParallax>
         <CardWrapper>
           <Image className='w-full h-auto aspect-video object-cover loading-bg' src={ image }  alt={ title } width={ 320 } height={ 180 } />
-          <div className='text-xs pt-2 sm:text-sm lg:text-md text-foreground'>
+          <article className='text-xs pt-2 sm:text-sm lg:text-md text-foreground'>
             <h3>
               { title }
             </h3>
             <p>
               { description }
             </p>
-          </div>
+          </article>
         </CardWrapper>
       </HoverParallax>
       {
