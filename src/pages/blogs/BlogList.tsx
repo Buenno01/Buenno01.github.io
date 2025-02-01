@@ -1,24 +1,27 @@
-'use client';
-
 import Image from 'next/image';
-import useBlogs from '@/hooks/useBlogs';
 import React from 'react';
 import SectionWrapper from '@/components/ui/SectionWrapper';
 import CardWrapper from '@/components/ui/CardWrapper';
+import { Blog } from '@/@types/Blog';
+import * as data from '@/data/blogs';
+// import blogService from '@/services/blogs';
 
-function BlogList() {
-  const [showing, setShowing] = React.useState(4);
-  const { blogs, loading, error } = useBlogs();
+async function BlogList() {
+  let blogs: Blog[] = [];
 
-  console.log(blogs);
-  
-
-  if (loading) return <p>Loading...</p>;
-  if (error) return <p>{ error }</p>;
+  try {
+    // blogs = await blogService.get();
+    blogs = data.default
+  } catch (error) {
+    if (error instanceof Error) {
+      return <p>{ error.message }</p>;
+    }
+    return <p>An error occurred while fetching the blogs.</p>;
+  }
   return (
     <SectionWrapper className='md:w-1/2'>
       {
-        blogs.slice(0, showing).map((blog, index) => (
+        blogs.map((blog, index) => (
           <CardWrapper key={ index + blog.title }>
             <article>
               <Image src={ blog.cover_image } alt={ blog.title } width={ 1000 } height={ 420 } layout='responsive'></Image>
@@ -27,11 +30,6 @@ function BlogList() {
             </article>
           </CardWrapper>
         ))
-      }
-      {
-        showing < blogs.length && (
-          <button onClick={ () => setShowing(showing + 4) }>Load More</button>
-        )
       }
     </SectionWrapper>
   )
