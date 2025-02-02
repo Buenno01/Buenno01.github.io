@@ -36,7 +36,7 @@ function AnimatedBanner({ children }: { children?: React.ReactNode }) {
         {
           childrenArray.map((children, index) => (
             <motion.div
-              style={{ maskSize: `${index <= currentImage ? 400 : 0}%` }}
+              style={{ maskSize: `${index <= currentImage ? 400 : 0}%`, pointerEvents: index === currentImage ? "auto" : "none" }}
               key={"animated-banner-slide-" + index}
               className="w-screen h-screen absolute top-0 left-0 mask transition-mask duration-1000"
             >
