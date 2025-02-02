@@ -2,13 +2,9 @@
 
 import { motion, useMotionValueEvent, useScroll } from "motion/react";
 import React from "react";
-import Image from "next/image";
 
-function Index() {
-  const images = [
-    { src: "/banner1.jpg", alt: "This is one of my projects" },
-    { src: "/banner2.jpg", alt: "Here is another one" },
-  ];
+function AnimatedBanner({ children }: { children?: React.ReactNode }) {
+  const childrenArray = React.Children.toArray(children);
 
   const ref = React.useRef<HTMLElement>(null);
 
@@ -21,7 +17,7 @@ function Index() {
   });
 
   useMotionValueEvent(scrollYProgress, "change", (latest) => {
-    const imageChangeThreshold = 1 / images.length;
+    const imageChangeThreshold = 1 / childrenArray.length;
 
     if (latest >= imageChangeThreshold * (currentImage + 1)) {
       setCurrentImage((prev) => prev + 1);
@@ -34,26 +30,17 @@ function Index() {
     <section
       ref={ref}
       className="relative w-screen"
-      style={{ height: `${100 * images.length}vh` }}
+      style={{ height: `${100 * childrenArray.length}vh` }}
     >
       <div className="w-screen sticky h-screen top-0">
         {
-          images.map((image, index) => (
+          childrenArray.map((children, index) => (
             <motion.div
               style={{ maskSize: `${index <= currentImage ? 400 : 0}%` }}
-              key={"animated-banner-slide-" + image.src}
+              key={"animated-banner-slide-" + index}
               className="w-screen h-screen absolute top-0 left-0 mask transition-mask duration-1000"
             >
-              <Image
-                src={image.src}
-                alt={image.alt}
-                width={1920}
-                height={1080}
-                className="w-full h-full object-cover"
-              />
-              <div className="absolute bottom-0 top-0 left-0 right-0 text-center text-2xl flex flex-col justify-center items-center">
-                <h2>{image.alt}</h2>
-              </div>
+              { children }
             </motion.div>
           ))
         }
@@ -62,4 +49,4 @@ function Index() {
   );
 }
 
-export default Index;
+export default AnimatedBanner;
