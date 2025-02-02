@@ -1,12 +1,22 @@
-import BlogList from '@/pages/blogs/BlogList'
-import React from 'react'
+import BlogList from '@/pages/blogs/BlogList';
+import React from 'react';
 
-function page() {
+type BlogParams = {
+  page?: string;
+}
+
+export type BlogSearchParams = Promise<BlogParams>;
+
+type BlogPageProps = {
+  searchParams?: BlogSearchParams;
+}
+
+function page(props: BlogPageProps) {
   return (
     <>
-      <BlogList />
+      <BlogList searchParams={ props.searchParams} />
     </>
   )
 }
 
-export default page
+export default page;

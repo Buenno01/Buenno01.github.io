@@ -1,17 +1,20 @@
-import Image from 'next/image';
 import React from 'react';
 import SectionWrapper from '@/components/ui/SectionWrapper';
-import CardWrapper from '@/components/ui/CardWrapper';
 import { Blog } from '@/@types/Blog';
-import * as data from '@/data/blogs';
-// import blogService from '@/services/blogs';
+import BlogCard from '@/components/BlogCard';
+import { BlogSearchParams } from '@/app/blogs/page';
+import blogService from '@/services/blogs';
 
-async function BlogList() {
+type BlogListProps = {
+  searchParams?: BlogSearchParams;
+}
+
+async function BlogList({ searchParams }: BlogListProps) {
   let blogs: Blog[] = [];
 
   try {
-    // blogs = await blogService.get();
-    blogs = data.default
+    const { page } = (await searchParams) || { page: '1', q: '' };
+    blogs = await blogService.get(page);
   } catch (error) {
     if (error instanceof Error) {
       return <p>{ error.message }</p>;
@@ -19,18 +22,19 @@ async function BlogList() {
     return <p>An error occurred while fetching the blogs.</p>;
   }
   return (
-    <SectionWrapper className='md:w-1/2'>
-      {
-        blogs.map((blog, index) => (
-          <CardWrapper key={ index + blog.title }>
-            <article>
-              <Image src={ blog.cover_image } alt={ blog.title } width={ 1000 } height={ 420 } layout='responsive'></Image>
-              <h3>{ blog.title }</h3>
-              <p>{ blog.description }</p>
-            </article>
-          </CardWrapper>
-        ))
-      }
+    <SectionWrapper className='md:max-w-3xl'>
+      <h1 className='section-title-container'>
+        Blog List
+      </h1>
+      <ul>
+        {
+          blogs.map((blog, index) => (
+            <li key={ index + blog.title }>
+              <BlogCard blog={ blog } />
+            </li>
+          ))
+        }
+      </ul>
     </SectionWrapper>
   )
 }
