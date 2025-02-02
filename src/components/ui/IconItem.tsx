@@ -10,12 +10,24 @@ type LiProps = ComponentProps<'li'>;
 
 type IconItemProps = IconItemType & LiProps & {
   url?: string | null;
+  expanded?: boolean;
 };
 
-function IconItem({ name, iconKey, backgroundColor = 'rgb(30, 58, 138)', textColor = 'rbg(255, 255, 255)', url = null, ...rest }: IconItemProps) {
+function IconItem({ name, iconKey, backgroundColor = 'rgb(30, 58, 138)', textColor = 'rbg(255, 255, 255)', url = null, expanded, ...rest }: IconItemProps) {
   const [isHovered, setIsHovered] = React.useState(false);
 
-  const variants = url ? {
+  const variants = expanded 
+  ?  {
+    hidden: {
+      width: 'var(--icon-item-visible)',
+      marginLeft: '0.25rem',
+    },
+    visible: {
+      width: 'var(--icon-item-visible)',
+      marginLeft: '0.25rem',
+    },
+  }
+  : url ? {
     hidden: {
       width: 'var(--icon-item-hidden)',
       marginLeft: 'var(--icon-item-hidden-margin-left)',

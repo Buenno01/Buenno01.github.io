@@ -12,7 +12,7 @@ import { FaGlobeAmericas } from "react-icons/fa";
 import { IoDocumentText } from "react-icons/io5";
 import { IoCodeSlash } from "react-icons/io5";
 import { PiStudentFill } from "react-icons/pi";
-
+import { GrLinkedin } from "react-icons/gr";
 
 type SvgProps = ComponentProps<"svg">;
 
@@ -34,6 +34,7 @@ type IconMapper = {
   'frontend': JSX.Element;
   'tutorial': JSX.Element;
   'react': JSX.Element;
+  'linkedin': JSX.Element;
 }
 
 type Icons = keyof IconMapper;
@@ -53,6 +54,7 @@ function Icon({ iconKey, ...rest }: IconProps) {
     'document': <IoDocumentText  { ...rest } />,
     'frontend': <IoCodeSlash  { ...rest } />,
     'tutorial': <PiStudentFill  { ...rest } />,
+    'linkedin': <GrLinkedin  { ...rest } />,
   }
 
   return mapper[iconKey as Icons] || <TbPlugConnectedX  { ...rest } />;
