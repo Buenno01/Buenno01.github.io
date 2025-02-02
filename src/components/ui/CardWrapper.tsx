@@ -1,13 +1,18 @@
-import React from 'react'
+import React, { ComponentProps } from 'react'
+import { twMerge } from 'tailwind-merge';
 
-function CardWrapper({ children }: { children: React.ReactNode }) {
+type CardWrapperProps = { children: React.ReactNode } & ComponentProps<'div'>;
+
+function CardWrapper({ children, ...rest }: CardWrapperProps) {
   return (
-    <div 
-    className='p-3 sm:p-4 h-fit relative z-10
-      asdbg-background-500 bg-4
-      bg-background-800 backdrop-blur-sm
-      border-2 border-background-700
-    '
+    <div
+      { ...rest }
+      className={
+        twMerge(
+          rest.className,
+          "p-3 sm:p-4 h-fit relative z-10 bg-background-800 border-2 border-background-700"
+        )
+      }
     >
       { children }
     </div>
