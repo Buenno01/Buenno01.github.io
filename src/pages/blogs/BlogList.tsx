@@ -11,10 +11,14 @@ type BlogListProps = {
 
 async function BlogList({ searchParams }: BlogListProps) {
   let blogs: Blog[] = [];
+  let totalPages = 1;
+  let currentPage = 1;
 
   try {
     const { page } = (await searchParams) || { page: '1', q: '' };
+    currentPage = Number(page);
     blogs = await blogService.get(page);
+    totalPages = (await blogService.getTotalPages());
   } catch (error) {
     if (error instanceof Error) {
       return <p>{ error.message }</p>;
@@ -35,6 +39,23 @@ async function BlogList({ searchParams }: BlogListProps) {
           ))
         }
       </ul>
+      {
+        totalPages > 1 && (
+          <nav>
+            <ul className='flex justify-center flex-wrap'>
+              {
+                Array.from({ length: totalPages }, (_, index) => (
+                  <li key={ index } className={ `space-x-1 w-fit ${ index + 1 === currentPage ? 'font-semibold text-cyan underline' : '' }` }>
+                    <a href={ `/blogs?page=${ index + 1 }` } className='p-2'>
+                      { index + 1 }
+                    </a>
+                  </li>
+                ))
+              }
+            </ul>
+          </nav>
+        )
+      }
     </SectionWrapper>
   )
 }

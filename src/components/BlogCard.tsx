@@ -42,7 +42,7 @@ function BlogCard({ blog }: { blog: Blog }) {
       </CardWrapper>
       {
         blog.tag_list.length > 0 && (
-          <ul className='mt-2'>
+          <ul className='mt-2 flex flex-wrap gap-1'>
             {
               blog.tag_list.map((tag, index) => (
                 <IconItem key={ index + tag } backgroundColor='#fff' textColor='#121212' iconKey={ tag } name={ tag } className='capitalize lg:translate-y-0' />
