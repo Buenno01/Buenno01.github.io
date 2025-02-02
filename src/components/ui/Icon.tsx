@@ -10,6 +10,9 @@ import { FaNodeJs } from "react-icons/fa";
 import { FaGithub } from "react-icons/fa";
 import { FaGlobeAmericas } from "react-icons/fa";
 import { IoDocumentText } from "react-icons/io5";
+import { IoCodeSlash } from "react-icons/io5";
+import { PiStudentFill } from "react-icons/pi";
+
 
 type SvgProps = ComponentProps<"svg">;
 
@@ -28,6 +31,9 @@ type IconMapper = {
   'github': JSX.Element;
   'globe': JSX.Element;
   'document': JSX.Element;
+  'frontend': JSX.Element;
+  'tutorial': JSX.Element;
+  'react': JSX.Element;
 }
 
 type Icons = keyof IconMapper;
@@ -35,6 +41,7 @@ type Icons = keyof IconMapper;
 function Icon({ iconKey, ...rest }: IconProps) {
   const mapper = {
     'react-js': <FaReact  { ...rest } />,
+    'react': <FaReact  { ...rest } />,
     'tailwindcss': <RiTailwindCssFill  { ...rest } />,
     'next-js': <SiNextdotjs  { ...rest } />,
     'typescript': <BiLogoTypescript  { ...rest } />,
@@ -44,6 +51,8 @@ function Icon({ iconKey, ...rest }: IconProps) {
     'github': <FaGithub  { ...rest } />,
     'globe': <FaGlobeAmericas  { ...rest } />,
     'document': <IoDocumentText  { ...rest } />,
+    'frontend': <IoCodeSlash  { ...rest } />,
+    'tutorial': <PiStudentFill  { ...rest } />,
   }
 
   return mapper[iconKey as Icons] || <TbPlugConnectedX  { ...rest } />;
