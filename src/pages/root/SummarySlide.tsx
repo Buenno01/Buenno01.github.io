@@ -24,7 +24,7 @@ function SummarySlide() {
         </nav>
       </div>
       <div className='relative after:absolute after:inset-0 after:bg-gradient-to-t md:after:bg-gradient-to-r after:from-background-900 after:to-transparent'>
-        <Image className='object-cover w-full h-full' src='/banner1.jpg' width={960} height={960} alt='Something'></Image>
+        <Image className='object-cover w-full h-full' src='/banner1.jpg' width={350} height={350} alt='Something'></Image>
       </div>
     </div>
   )
