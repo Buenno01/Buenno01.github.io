@@ -21,11 +21,18 @@ function BouncingButton({
   const [isBouncing, setIsBouncing] = React.useState(false);
 
   const bounceParams: TargetAndTransition = {};
-  x && (bounceParams.x = x);
-  y && (bounceParams.y = y);
+  if (x) {
+    bounceParams.x = x;
+  }
+
+  if (y) {
+    bounceParams.y = y;
+  }
 
   const handleClick = (e: React.MouseEvent<HTMLButtonElement>) => {
-    onClick && onClick(e);
+    if (onClick && typeof onClick === "function") {
+      onClick(e);
+    }
     handleBounce();
   };
 
