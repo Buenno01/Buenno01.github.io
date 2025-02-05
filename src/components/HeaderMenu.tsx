@@ -5,6 +5,7 @@ import { usePathname } from 'next/navigation';
 import React from 'react';
 import { FiMenu } from 'react-icons/fi';
 import { IoClose } from "react-icons/io5";
+import headerLinks from '@/data/headerLinks';
 
 function HeaderMenu() {
   const [active, setActive] = React.useState(false);
@@ -13,21 +14,6 @@ function HeaderMenu() {
   const toggleMenu = () => {
     setActive(!active);
   }
-
-  const links = [
-    {
-      name: 'Home',
-      url: '/',
-    },
-    {
-      name: 'Blogs',
-      url: '/blogs',
-    },
-    {
-      name: 'About',
-      url: '/about',
-    },
-  ];
 
   return (
     <>
@@ -66,7 +52,7 @@ function HeaderMenu() {
         </button>
         <nav>
           <ul className='flex flex-col gap-2 md:flex-row md:gap-4 md:justify-center list-none'>
-            {links.map((link) => (
+            {headerLinks.map((link) => (
               <li key={'header-link-' + link.url}>
                 <Link
                   className={`
