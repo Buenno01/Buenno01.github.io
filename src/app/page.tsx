@@ -1,32 +1,25 @@
 import LocomotiveScroll from "@/components/LocomotiveScroll";
-import InfiniteSlider from "@/components/ui/InfiniteSlider";
 import ProjectGrid from "@/pages/root/ProjectGrid";
 import SummarySlide from "@/pages/root/SummarySlide";
+import Ticker from "@/components/ui/Ticker";
+import about from "@/data/about";
+import Icon from "@/components/ui/Icon";
 
 export default function Home() {
-  const something = [
-    1,
-    2,
-    3,
-    4,
-  ]
-
+  const stacks = about.stacks.map((stack) =>  stack.items).reduce((acc, cur) => acc.concat(cur), []);
   return (
     <>    
       <LocomotiveScroll></LocomotiveScroll>
       <section className="relative w-screen h-screen">
         <SummarySlide />
       </section>
-      <section className="relative w-screen h-screen">
-        <SummarySlide />
-      </section>
-      <InfiniteSlider duration={5}>
+      <Ticker className="bg-cyan py-4" duration={15}>
         {
-          something.map((number) => (
-            <div key={number} className="bg-blue-500" style={{ width: '25vw'}}>{number}</div>
-          ))
+          stacks.map((item, index) => (
+              <Icon className="text-5xl mx-6" key={item.iconKey + index } iconKey={item.iconKey} />
+            ))
         }
-      </InfiniteSlider>
+      </Ticker>
       <ProjectGrid />
     </>
   );
