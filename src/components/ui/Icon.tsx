@@ -1,18 +1,37 @@
 import { ComponentProps, JSX } from "react";
-import { FaReact } from "react-icons/fa6";
-import { FaShopify } from "react-icons/fa";
+import {
+  FaReact,
+  FaGitAlt
+} from "react-icons/fa6";
+import {
+  FaNodeJs,
+  FaGlobeAmericas,
+  FaGithub,
+  FaShopify,
+  FaHtml5,
+  FaCss3Alt,
+  FaDocker
+} from "react-icons/fa";
+import {
+  SiNextdotjs,
+  SiCypress,
+  SiRedux,
+  SiTestinglibrary,
+  SiMocha,
+  SiJest
+} from "react-icons/si";
+import {
+  GrMysql,
+  GrLinkedin
+} from "react-icons/gr";
+import {
+  IoDocumentText,
+  IoCodeSlash
+} from "react-icons/io5";
 import { RiTailwindCssFill } from "react-icons/ri";
-import { SiNextdotjs } from "react-icons/si";
 import { TbPlugConnectedX } from "react-icons/tb";
-import { BiLogoTypescript } from "react-icons/bi";
-import { GrMysql } from "react-icons/gr";
-import { FaNodeJs } from "react-icons/fa";
-import { FaGithub } from "react-icons/fa";
-import { FaGlobeAmericas } from "react-icons/fa";
-import { IoDocumentText } from "react-icons/io5";
-import { IoCodeSlash } from "react-icons/io5";
+import { BiLogoTypescript, BiLogoJavascript } from "react-icons/bi";
 import { PiStudentFill } from "react-icons/pi";
-import { GrLinkedin } from "react-icons/gr";
 
 type SvgProps = ComponentProps<"svg">;
 
@@ -35,6 +54,16 @@ type IconMapper = {
   'tutorial': JSX.Element;
   'react': JSX.Element;
   'linkedin': JSX.Element;
+  'redux': JSX.Element;
+  'react-testing-library': JSX.Element;
+  'html': JSX.Element;
+  'css': JSX.Element;
+  'javascript': JSX.Element;
+  'docker': JSX.Element;
+  'mocha': JSX.Element;
+  'jest': JSX.Element;
+  'cypress': JSX.Element;
+  'git': JSX.Element;
 }
 
 type Icons = keyof IconMapper;
@@ -55,6 +84,16 @@ function Icon({ iconKey, ...rest }: IconProps) {
     'frontend': <IoCodeSlash  { ...rest } />,
     'tutorial': <PiStudentFill  { ...rest } />,
     'linkedin': <GrLinkedin  { ...rest } />,
+    'redux': <SiRedux  { ...rest } />,
+    'react-testing-library': <SiTestinglibrary  { ...rest } />,
+    'html': <FaHtml5  { ...rest } />,
+    'css': <FaCss3Alt  { ...rest } />,
+    'javascript': <BiLogoJavascript  { ...rest } />,
+    'docker': <FaDocker  { ...rest } />,
+    'mocha': <SiMocha  { ...rest } />,
+    'jest': <SiJest  { ...rest } />,
+    'cypress': <SiCypress  { ...rest } />,
+    'git': <FaGitAlt  { ...rest } />,
   }
 
   return mapper[iconKey as Icons] || <TbPlugConnectedX  { ...rest } />;

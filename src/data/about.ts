@@ -1,3 +1,5 @@
+import iconItem from "./iconItem";
+
 const about = {
   name: 'Vinícius Bueno Costa',
   role: 'Fullstack Developer | Shopify Developer',
@@ -16,6 +18,41 @@ const about = {
       url: 'https://www.linkedin.com/in/viniciusbuenocosta/',
       backgroundColor: '#0e76a8',
       textColor: '#fff',
+    }
+  ],
+  stacks: [
+    {
+      name: 'Frontend',
+      items: [
+        iconItem.react,
+        iconItem.next,
+        iconItem.tailwind,
+        iconItem.html,
+        iconItem.css,
+        iconItem.liquid,
+        iconItem.redux,
+        iconItem.reacttestinglibrary,
+      ]
+    },
+    {
+      name: 'Backend',
+      items: [
+        iconItem.nodejs,
+        iconItem.mysql,
+        iconItem.docker,
+        iconItem.mocha,
+      ]
+    },
+    {
+      name: 'Tools',
+      items: [
+        iconItem.github,
+        iconItem.typescript,
+        iconItem.jest,
+        iconItem.cypress,
+        iconItem.javascript,
+        iconItem.git,
+      ]
     }
   ]
 };
