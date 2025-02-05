@@ -12,8 +12,21 @@ const projects: Project[] = [
     links: [
       {
         ...iconItem.globe,
-        name: 'Website',
         url: 'https://www.naturabrasil.com/'
+      },
+    ],
+  },
+  {
+    slug: 'esca',
+    title: 'ESCA Contábil',
+    description: 'ESCA Contábil is an accounting firm located in São Paulo, Brazil. The website is built with React and Liquid. It was a inovative project that I developed at Shakers as a front-end developer.',
+    image: '/esca-2024.png',
+    stacks: [iconItem.react, iconItem.liquid, iconItem.typescript],
+    content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ac libero ac nunc ultricies ultricies. Nulla facilisi. Nullam ut est nec fel',
+    links: [
+      {
+        ...iconItem.globe,
+        url: 'https://esca.com.br/'
       },
     ],
   },

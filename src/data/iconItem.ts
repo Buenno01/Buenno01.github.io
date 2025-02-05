@@ -54,7 +54,7 @@ const iconItem: StackData = {
     textColor: 'rgb(255, 255, 255)',
   },
   globe: {
-    name: 'Demo',
+    name: 'Website',
     iconKey: 'globe',
     backgroundColor: '#7bccef',
     textColor: 'rgb(255, 255, 255)',
