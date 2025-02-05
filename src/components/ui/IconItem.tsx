@@ -63,7 +63,7 @@ function IconItem({ name, iconKey, backgroundColor = 'rgb(30, 58, 138)', textCol
         variants={ variants }
         initial='hidden'
         animate={isHovered ? 'visible' : 'hidden'}
-        className='overflow-hidden'
+        className='overflow-hidden whitespace-nowrap'
       >
         { name }
       </motion.span>

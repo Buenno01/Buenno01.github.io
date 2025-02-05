@@ -1,7 +1,7 @@
 import { ComponentProps, JSX } from "react";
 import {
   FaReact,
-  FaGitAlt
+  FaGitAlt,
 } from "react-icons/fa6";
 import {
   FaNodeJs,
@@ -10,7 +10,7 @@ import {
   FaShopify,
   FaHtml5,
   FaCss3Alt,
-  FaDocker
+  FaDocker,
 } from "react-icons/fa";
 import {
   SiNextdotjs,
@@ -18,7 +18,7 @@ import {
   SiRedux,
   SiTestinglibrary,
   SiMocha,
-  SiJest
+  SiJest,
 } from "react-icons/si";
 import {
   GrMysql,
@@ -26,12 +26,18 @@ import {
 } from "react-icons/gr";
 import {
   IoDocumentText,
-  IoCodeSlash
+  IoCodeSlash,
 } from "react-icons/io5";
 import { RiTailwindCssFill } from "react-icons/ri";
 import { TbPlugConnectedX } from "react-icons/tb";
-import { BiLogoTypescript, BiLogoJavascript } from "react-icons/bi";
-import { PiStudentFill } from "react-icons/pi";
+import {
+  BiLogoTypescript,
+  BiLogoJavascript,
+} from "react-icons/bi";
+import {
+  PiDevToLogoFill,
+  PiStudentFill,
+} from "react-icons/pi";
 
 type SvgProps = ComponentProps<"svg">;
 
@@ -94,6 +100,7 @@ function Icon({ iconKey, ...rest }: IconProps) {
     'jest': <SiJest  { ...rest } />,
     'cypress': <SiCypress  { ...rest } />,
     'git': <FaGitAlt  { ...rest } />,
+    'dev-to': <PiDevToLogoFill { ...rest } />,
   }
 
   return mapper[iconKey as Icons] || <TbPlugConnectedX  { ...rest } />;
