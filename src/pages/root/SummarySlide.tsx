@@ -8,7 +8,7 @@ function SummarySlide() {
     <div className='flex flex-col-reverse md:grid md:grid-cols-2 h-full'>
       <div className='h-full flex flex-col justify-center p-6 md:p-8 md:max-w-xl md:mx-auto'>
         <h1>
-          <span className='absolute text-transparent'>Portfolio: </span>
+          <span className='sr-only'>Portfolio: </span>
           { about.name }
         </h1>
         <h2 className='text-sm font-light capitalize'>
