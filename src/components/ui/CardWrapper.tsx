@@ -9,8 +9,8 @@ function CardWrapper({ children, ...rest }: CardWrapperProps) {
       { ...rest }
       className={
         twMerge(
+          "p-3 sm:p-4 h-fit relative z-10 bg-background-800 border-2 border-background-700",
           rest.className,
-          "p-3 sm:p-4 h-fit relative z-10 bg-background-800 border-2 border-background-700"
         )
       }
     >

@@ -7,5 +7,6 @@ export type Project = {
   image: string;
   stacks: IconItemType[];
   content: string;
-  links: IconLinkType[]
+  links: IconLinkType[];
+  slug: string;
 }

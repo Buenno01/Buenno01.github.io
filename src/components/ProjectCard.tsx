@@ -9,7 +9,7 @@ type ProjectCardProps = Project;
 
 function ProjectCard({ title, description, stacks, image, links }: ProjectCardProps) {
   return (
-    <div className='group'>
+    <div className='group h-full flex flex-col'>
       {
         links.length > 0 && (
         <nav>
@@ -27,8 +27,8 @@ function ProjectCard({ title, description, stacks, image, links }: ProjectCardPr
         </nav>
         )
       }
-      <HoverParallax>
-        <CardWrapper>
+      <HoverParallax className='flex-grow-2'>
+        <CardWrapper className='h-full flex flex-col'>
           <Image className='w-full h-auto aspect-video object-cover loading-bg' src={ image }  alt={ title } width={ 320 } height={ 180 } />
           <article className='text-xs pt-2 sm:text-sm lg:text-md text-foreground'>
             <h3>
