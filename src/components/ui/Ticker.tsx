@@ -25,7 +25,7 @@ const Ticker: React.FunctionComponent<TickerProps> = ({
 
     const controls = animate(
       trackRef.current,
-      { x: tickerContentWidth ? tickerContentWidth * - 1 : 0 },
+      { x: tickerContentWidth ? tickerContentWidth * -1 : 0 },
       { ease: 'linear', duration, repeat: Infinity }
     );
 
