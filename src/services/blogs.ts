@@ -25,9 +25,22 @@ async function getTotalPages() {
   return data.length / 6;
 }
 
+async function getById(id: number) {
+  const BASE_URL = `https://dev.to/api/articles/${id}`;
+
+  const { data, status } = await axios.get(BASE_URL);
+
+  if (status !== 200) {
+    throw new Error('An error occurred while fetching the blog.');
+  }
+
+  return data;
+}
+
 const blogService = {
   get,
   getTotalPages,
+  getById,
 }
 
 export default blogService;
