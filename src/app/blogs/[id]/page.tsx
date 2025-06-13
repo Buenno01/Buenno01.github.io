@@ -12,12 +12,12 @@ import rehypeHighlight from 'rehype-highlight';
 import 'highlight.js/styles/github-dark.css';
 
 type BlogPageProps = {
-  params: { id: string };
+  params: Promise<{ id: string }>;
 };
 
 // Generate metadata for SEO
 export async function generateMetadata({ params }: BlogPageProps): Promise<Metadata> {
-  const { id } = params;
+  const { id } = await params;
   
   try {
     const blog: BlogById = await blogService.getById(parseInt(id));
@@ -40,7 +40,7 @@ export async function generateMetadata({ params }: BlogPageProps): Promise<Metad
 }
 
 export default async function BlogPage({ params }: BlogPageProps) {
-  const { id } = params;
+  const { id } = await params;
   
   let blog: BlogById;
   
