@@ -18,9 +18,7 @@ function BlogCard({ blog }: { blog: Blog }) {
             <h2>
               <a
                 className='after:absolute after:top-0 after:left-0 after:w-full after:h-full after:z-10 max-w-full block whitespace-nowrap overflow-ellipsis overflow-hidden'
-                href={ blog.url }
-                target='_blank'
-                referrerPolicy='no-referrer'
+                href={ `/blogs/${ blog.id }` }
                 title={ blog.title }
               >
                 { blog.title }
