@@ -4,9 +4,9 @@ import Link from 'next/link';
 export default function NotFound() {
   return (
     <SectionWrapper className="text-center">
-      <h1 className="text-4xl font-bold mb-4">Blog Not Found</h1>
+      <h1 className="text-4xl font-bold mb-4 uppercase">Blog Not Found | 404</h1>
       <p className="text-lg mb-6">
-        Sorry, the blog post you're looking for doesn't exist.
+        {"Sorry, the blog post you're looking for doesn't exist."}
       </p>
       <Link 
         href="/blogs" 

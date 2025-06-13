@@ -31,7 +31,7 @@ export async function generateMetadata({ params }: BlogPageProps): Promise<Metad
         images: [blog.cover_image],
       },
     };
-  } catch (error) {
+  } catch {
     return {
       title: 'Blog Not Found | Portfolio Vinícius',
       description: 'The requested blog post could not be found.',
@@ -46,9 +46,9 @@ export default async function BlogPage({ params }: BlogPageProps) {
   
   try {
     blog = await blogService.getById(parseInt(id));
+
     console.log(blog);
-  } catch (error) {
-    // If blog is not found, show 404 page
+  } catch {
     notFound();
   }
 
